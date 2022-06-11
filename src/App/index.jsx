@@ -1,11 +1,15 @@
-import { AppUI } from './AppUI.jsx';
-import { Provider } from '../Context';
+import React from 'react';
+import { MyComponent } from '../Components/MyComponent';
+import { useMyContext } from './useMyContext';
 
 function App() {
+    const { myState, setMyState } = useMyContext();
     return (
-        <Provider>
-            <AppUI />
-        </Provider>
+        <React.Fragment>
+            <MyComponent 
+                myState={myState} 
+                setMyState={setMyState} />
+        </React.Fragment>
     );
 }
 
