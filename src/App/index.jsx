@@ -3,7 +3,10 @@ import { MyComponent } from '../Components/MyComponent';
 import { useMyContext } from './useMyContext';
 
 function App() {
-    const { myState, setMyState } = useMyContext();
+    const { 
+        myState, setMyState,
+        myItems, setMyItems,
+    } = useMyContext();
     return (
         <React.Fragment>
             <MyComponent 
