@@ -1,13 +1,23 @@
-import React from 'react';
-import { useLocalStorage } from './useLocalStorage';
+// import React from 'react';
+// import axios from 'axios';
+// import { useLocalStorage } from './useLocalStorage';
+import { reducer, functions } from './reducer';
+import { useReducer } from './useReducer';
 
-function useMyContext() {
-    const [myState, setMyState] = React.useState();
-    const [myItems, setMyItems] = useLocalStorage('myItems', []);
+function useMyContext(){
+
+    const initialState = {
+        input: '',
+    }
+
+    const [state, dispatch] = useReducer({ reducer, initialState });
+
+    const f = new functions(dispatch);
+
     return {
-        myState, setMyState,
-        myItems, setMyItems
+        state, f
     };
 }
+
 
 export { useMyContext };

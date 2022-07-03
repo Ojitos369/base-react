@@ -1,0 +1,87 @@
+@import './animations.css';
+@import './vars.css';
+
+body {
+    background: var(--bg-color);
+    color: #ccc;
+    min-height: 100vh;
+    overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+    -webkit-appearance: none;
+    display: none;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.reflejo:hover {
+    animation: reflejo 0.3s;
+}
+
+.manita {
+    cursor: pointer;
+}
+
+.my-border-dark {
+    border: 3px solid var(--base-dark);
+    -webkit-box-shadow: 0px 0px 10px 1px var(--shadow-color-light);
+    -moz-box-shadow: 0px 0px 10px 1px var(--shadow-color-light);
+    box-shadow: 0px 0px 10px 1px var(--shadow-color-light);
+}
+
+.my-border-light {
+    border: 3px solid var(--base-light);
+    -webkit-box-shadow: 0px 0px 10px 1px var(--shadow-color-dark);
+    -moz-box-shadow: 0px 0px 10px 1px var(--shadow-color-dark);
+    box-shadow: 0px 0px 10px 1px var(--shadow-color-dark);
+}
+
+.my-btn-light {
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+    background-color: var(--base-light);
+    color: #000;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.my-btn-dark {
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+    background-color: var(--base-dark);
+    color: #fff;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+
+.my-input {
+    border-radius: 25px;
+    padding: 15px;
+    background-color: #0000;
+    color: #ccc;
+    font-size: 1.2em;
+    border: 3px solid var(--base-dark);
+}
+
+.my-input:focus {
+    outline: none;
+}
+
+.input-text:hover {
+    cursor: text;
+}
+
+.zoom:hover {
+    animation: zoom 1s;
+}
