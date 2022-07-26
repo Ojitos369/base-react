@@ -4,13 +4,17 @@ import { useMyContext } from './useMyContext';
 
 function App() {
     const { 
-        state, f
+        state, f,
+        localState, lf,
     } = useMyContext();
     return (
         <React.Fragment>
             <MyComponent 
                 state={state} 
-                updateInput={f.updateInput} />
+                updateInput={f.updateInput}
+                lstate={localState}
+                lupdateInput={lf.updateInput}
+                />
         </React.Fragment>
     );
 }

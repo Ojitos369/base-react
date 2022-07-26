@@ -1,6 +1,6 @@
 // import React from 'react';
 // import axios from 'axios';
-// import { useLocalStorage } from './useLocalStorage';
+import { useLocalStorage, localFunctions } from './useLocalStorage';
 import { reducer, functions } from './reducer';
 import { useReducer } from './useReducer';
 
@@ -11,11 +11,14 @@ function useMyContext(){
     }
 
     const [state, dispatch] = useReducer({ reducer, initialState });
+    const [localState, localDispatch] = useLocalStorage('localState', initialState);
 
     const f = new functions(dispatch);
+    const lf = new localFunctions(localDispatch);
 
     return {
-        state, f
+        state, f,
+        localState, lf,
     };
 }
 

@@ -1,27 +1,71 @@
-import React from 'react';
+import React from "react";
 
-function useLocalStorage(key, initialValue = '') {
-    const [item, setItem] = React.useState(initialValue);
+function useLocalStorage(itemName, initialValue) {
+    const [state, dispatch] = React.useReducer(reducer, initialValue);
 
-    React.useEffect(() => {
-        const locaStorageItem = localStorage.getItem(key);
-        let parsedItem;
+    const {} = state;
+    let sincronizedItem = true;
 
-        if (locaStorageItem) {
-            parsedItem = JSON.parse(locaStorageItem);
-        } else {
-            localStorage.setItem(key, JSON.stringify(initialValue));
-            parsedItem = [];
+    // Action creators
+    const onSave = (newItem)=>dispatch({ type: actionTypes.save, payload: newItem});
+
+    React.useEffect(()=>{
+        setTimeout( ()=>{
+        try {
+            const localStorageItem = localStorage.getItem(itemName);
+            let parsedItem;
+
+            if(!localStorageItem) {
+                localStorage.setItem(itemName,JSON.stringify(initialValue));
+                parsedItem = initialValue;
+            } else {
+                parsedItem = JSON.parse(localStorageItem);
+            }
+            onSave(parsedItem);
+        } catch (error) {
+            console.log(error);
         }
-        setItem(parsedItem);
+        },2000);
     },[]);
 
-    const saveItems = (itemList) => {
-        const data = JSON.stringify(itemList);
-        localStorage.setItem(key, data);
-        setItem(itemList);
+    const saveItem = (newItem) =>{
+        try {
+            const stringifiedItem = JSON.stringify(newItem);
+            localStorage.setItem(itemName,stringifiedItem);
+            onSave(newItem);
+        } catch (error) {
+            console.log(error);
+        }
     }
-    return [item, saveItems]
+
+    return [state, saveItem];
 }
 
-export { useLocalStorage };
+const actionTypes = {
+    save: 'SAVE',
+}
+
+const reducerObject = (state, payload) =>({
+    [actionTypes.save]:{
+        ...payload
+    },
+});
+
+const reducer = (state, action) =>{
+    return reducerObject(state, action.payload)[action.type] || state;
+}
+
+class localFunctions {
+    constructor(dispatch) {
+        this.dispatch = dispatch;
+    }
+
+    updateInput = (e, state) => {
+        const value = e.target.value;
+        let clone_state = {...state};
+        clone_state.input = value;
+        this.dispatch(clone_state);
+    }
+}
+
+export { useLocalStorage, localFunctions }
