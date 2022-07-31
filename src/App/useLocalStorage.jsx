@@ -4,7 +4,6 @@ function useLocalStorage(itemName, initialValue) {
     const [state, dispatch] = React.useReducer(reducer, initialValue);
 
     const {} = state;
-    let sincronizedItem = true;
 
     // Action creators
     const onSave = (newItem)=>dispatch({ type: actionTypes.save, payload: newItem});
