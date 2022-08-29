@@ -8,7 +8,7 @@ function useMyContext(){
 
     const initialState = {
         classNames: {
-            generalStyles: 'bg-dark text-light',
+            generalStyles: 'bg-light text-dark',
         }
     }
 
@@ -18,8 +18,8 @@ function useMyContext(){
     const localInitialState = {
         theme: 'dark',
     }
-    localStorage.removeItem('localState');
-    const [localState, localDispatch] = useLocalStorage('localStatev2', localInitialState, f);
+    // localStorage.removeItem('localStatev2');
+    const [localState, localDispatch] = useLocalStorage('localState', localInitialState, f);
     const lf = new localFunctions(localDispatch);
 
 
