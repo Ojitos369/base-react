@@ -10,24 +10,24 @@ function App() {
         localState, lf,
     } = useMyContext();
     return (
-        <React.Fragment>
+        <div id="main-general-div" className={`${state.classNames.generalStyles}`}>
             <Routes>
                 {/* -----------   Home   ----------- */}
                 <Route
                     path="/"
                     element={
                         <MyComponent 
-                            state={state} 
-                            updateInput={f.updateInput}
-                            lstate={localState}
-                            lupdateInput={lf.updateInput}
-                            />
+                            ls={localState}
+                            lf={lf}
+                            s={state}
+                            f={f}
+                        />
                     }
                 />
                 {/* -----------   Default   ----------- */}
                 <Route path="*" element={<div className='text-danger h1 text-center mt-5'>404 Not Found</div>} />
             </Routes>
-        </React.Fragment>
+        </div>
     );
 }
 

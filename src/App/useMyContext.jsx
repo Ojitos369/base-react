@@ -7,14 +7,21 @@ import { useReducer } from './useReducer';
 function useMyContext(){
 
     const initialState = {
-        input: '',
+        classNames: {
+            generalStyles: 'bg-dark text-light',
+        }
     }
 
     const [state, dispatch] = useReducer({ reducer, initialState });
-    const [localState, localDispatch] = useLocalStorage('localState', initialState);
-
     const f = new functions(dispatch);
+
+    const localInitialState = {
+        theme: 'dark',
+    }
+    localStorage.removeItem('localState');
+    const [localState, localDispatch] = useLocalStorage('localStatev2', localInitialState, f);
     const lf = new localFunctions(localDispatch);
+
 
     return {
         state, f,

@@ -1,6 +1,20 @@
 import React from "react";
 
-function useLocalStorage(itemName, initialValue) {
+const updateInitialState = (f, ls) => {
+    let classNames = {}
+    if (ls.theme === 'dark') {
+        classNames = {
+            generalStyles: 'bg-dark text-light',
+        }
+    } else if (ls.theme === 'light') {
+        classNames = {
+            generalStyles: 'bg-light text-dark',
+        }
+    }
+    f.updateClassNames(classNames);
+}
+
+function useLocalStorage(itemName, initialValue, f) {
     const [state, dispatch] = React.useReducer(reducer, initialValue);
 
     const {} = state;
@@ -21,10 +35,11 @@ function useLocalStorage(itemName, initialValue) {
                 parsedItem = JSON.parse(localStorageItem);
             }
             onSave(parsedItem);
+            updateInitialState(f, parsedItem);
         } catch (error) {
             console.log(error);
         }
-        },2000);
+        },1000);
     },[]);
 
     const saveItem = (newItem) =>{
@@ -59,11 +74,13 @@ class localFunctions {
         this.dispatch = dispatch;
     }
 
-    updateInput = (e, state) => {
-        const value = e.target.value;
-        let clone_state = {...state};
-        clone_state.input = value;
+    changeTheme = (ls, f) => {
+        let clone_state = {
+            ...ls,
+            theme: (ls.theme === 'dark') ? 'light' : 'dark',
+        };
         this.dispatch(clone_state);
+        updateInitialState(f, clone_state);
     }
 }
 

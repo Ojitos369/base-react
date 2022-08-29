@@ -1,11 +1,14 @@
 const actionTypes = {
-    update_input: 'UPDATE_INPUT',
+    update_class_names: 'UPDATE_CLASS_NAMES',
 }
 
 const reducerObject =  (state, actionTypes, payload = null) => ({
-    [actionTypes.update_input]: {
+    [actionTypes.update_class_names]: {
         ...state,
-        input: payload,
+        classNames: {
+            ...state.classNames,
+            ...payload,
+        }
     }
 })
 
@@ -24,9 +27,8 @@ class functions {
         this.dispatch = dispatch;
     }
     
-    updateInput = (e) => {
-        const payload = e.target.value;
-        this.dispatch({ type: actionTypes.update_input, payload });
+    updateClassNames = classNames => {
+        this.dispatch({ type: actionTypes.update_class_names, payload: classNames });
     }
 }
 
