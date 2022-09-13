@@ -70,17 +70,20 @@ const reducer = (state, action) =>{
 }
 
 class localFunctions {
-    constructor(dispatch) {
-        this.dispatch = dispatch;
+    constructor(ld, ls, s, f, d) {
+        this.ld = ld;
+        this.ls = ls;
+        this.s = s;
+        this.f = f;
     }
 
-    changeTheme = (ls, f) => {
+    toggleTheme = () => {
         let clone_state = {
-            ...ls,
-            theme: (ls.theme === 'dark') ? 'light' : 'dark',
+            ...this.ls,
+            theme: (this.ls.theme === 'dark') ? 'light' : 'dark',
         };
-        this.dispatch(clone_state);
-        updateInitialState(f, clone_state);
+        this.ld(clone_state);
+        updateInitialState(this.f, clone_state);
     }
 }
 

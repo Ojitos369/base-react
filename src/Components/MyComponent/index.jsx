@@ -1,12 +1,18 @@
 import React from 'react';
+import { AllContext } from '../../App/MyContext';
 
-function MyComponent({ ls, lf, s, f }) {
-    // console.log('%c state', 'color: #f0a; font-size: 1.5em;', state);
+function MyComponent() {
+    const { ls, lf, s, f } = React.useContext(AllContext);
     return (
         <React.Fragment>
-            <p>Actual Theme {ls.theme}</p>
-            <button onClick={() => lf.changeTheme(ls, f)}>
-                Cambiar
+            <p>
+                Actual theme: {ls.theme}
+
+            </p>
+            <button
+                onClick={lf.toggleTheme}
+                >
+                changeTheme
             </button>
         </React.Fragment>
     )
