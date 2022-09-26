@@ -1,3 +1,14 @@
+import axios from "axios";
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
+
+
+const MySwal = withReactContent(Swal);
+
+let prod_mode = false;
+let link = '';
+prod_mode ? link = 'http://localhost:8000/' : link = 'http://localhost:8000/';
+
 const actionTypes = {
     update_class_names: 'UPDATE_CLASS_NAMES',
 }
