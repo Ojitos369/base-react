@@ -1,7 +1,7 @@
 import React from 'react';
 import { AllContext } from '../../App/MyContext';
 
-function BaseModal({}) {
+function BaseModal(props) {
     const { ls, Icons, s, f } = React.useContext(AllContext);
     
     const ztyle = props.zindex ? {zIndex: props.zindex} : {};
