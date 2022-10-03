@@ -1,0 +1,111 @@
+.fa-primary {
+    opacity: .3;
+}
+
+.fa-tertiary{
+    opacity: .6;
+}
+
+.fa-secondary{
+    opacity: .4;
+}
+
+.fa-quaternary{
+    opacity: .2;
+}
+
+
+.client-primary{
+    fill: #888;
+    opacity: .5;
+}
+.client-secondary{
+    fill: #0d6efd;
+    opacity: .8;
+}
+
+.add-user-primary {
+    fill: #888;
+}
+.add-user-secondary {
+    fill: #0d6efd;
+    opacity: .8;
+}
+
+.edit-user-primary, .edit-primary {
+    fill: rgb(185, 185, 29);
+}
+.edit-user-secondary, .edit-secondary {
+    fill: rgb(228, 29, 211);
+}
+
+.info-primary {
+    fill: #000;
+}
+.info-secondary {
+    fill: #0d6efd;
+}
+
+.reload-primary {
+    fill: #cc6;
+}
+.reload-secondary {
+    fill: #888;
+}
+
+.delete-primary {
+    fill: #000;
+}
+.delete-secondary {
+    fill: #a00;
+}
+
+.upload-primary {
+    fill: #888;
+}
+.upload-secondary {
+    fill: #0d6efd;
+}
+
+
+.truck-primary {
+    fill: #0d6efd;
+}
+.truck-secondary {
+    fill: #888;
+}
+
+.cart-plus-primary {
+    fill: #888;
+}
+.cart-plus-secondary {
+    fill: #0d6efd;
+}
+
+.diablito-primary {
+    fill: #000;
+}
+.diablito-secondary {
+    fill: #0ca;
+}
+
+.clone-primary {
+    fill: #007;
+}
+.clone-secondary {
+    fill: #070;
+}
+
+.add-item-primary {
+    fill: #0ebe1d;
+}
+.add-item-secondary {
+    fill: #2b1ac7;
+}
+
+.brush-primary {
+    fill: #fff;
+}
+.brush-secondary {
+    fill: #000;
+}

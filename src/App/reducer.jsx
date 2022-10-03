@@ -10,8 +10,6 @@ let link = '';
 prod_mode ? link = 'http://localhost:8000/' : link = 'http://localhost:8000/';
 
 const actionTypes = {
-    update_class_names: 'UPDATE_CLASS_NAMES',
-
     levels: {
         upgradeLvl0: 'LVL0_UPGRADE',
         setLvl0: 'LVL0_SET',
@@ -29,14 +27,6 @@ const actionTypes = {
 }
 
 const reducerObject =  (state, actionTypes, payload = null) => ({
-    [actionTypes.update_class_names]: {
-        ...state,
-        classNames: {
-            ...state.classNames,
-            ...payload,
-        }
-    },
-
 
     // ------------------------------------------------------------------ //
     // ---------------------------   LEVELS   --------------------------- //
@@ -183,17 +173,11 @@ const reducer = (state, action) => {
 }
 
 class functions {
-    constructor(dispatch) {
-        this.dispatch = dispatch;
+    constructor(d, s) {
+        this.d = d;
+        this.s = s;
     }
     
-    updateClassNames = classNames => {
-        this.dispatch({ type: actionTypes.update_class_names, payload: classNames });
-    }
-
-
-
-
     // ------------------------------------------------------------------ //
     // ---------------------------   LEVELS   --------------------------- //
     // ------------------------------------------------------------------ //

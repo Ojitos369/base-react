@@ -8,7 +8,13 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 function AppUI() {
     const { s, ls, f, lf } = React.useContext(AllContext);
     return (
-        <div id="main-general-div" className={`${s.classNames.generalStyles}`}>
+        <div className={`text-${s.classNames.less}`}>
+            <div 
+                className={`full-page-container page-dark animate__animated ${ls.theme === 'dark' ? 'animate__fadeInLeft' : 'animate__fadeOutRight'}`}
+            ></div>
+            <div 
+                className={`full-page-container page-light animate__animated ${ls.theme === 'light' ? 'animate__fadeInLeft' : 'animate__fadeOutBottomRight'}`}
+            ></div>
             <Routes>
                 {/* -----------   Home   ----------- */}
                 <Route

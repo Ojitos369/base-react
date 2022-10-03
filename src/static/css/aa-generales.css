@@ -8,11 +8,6 @@ body {
     overflow-y: scroll;
 }
 
-body::-webkit-scrollbar {
-    -webkit-appearance: none;
-    display: none;
-}
-
 a {
     color: #fff;
     text-decoration: none;
@@ -22,66 +17,144 @@ a:hover {
     text-decoration: none;
 }
 
+.row, .container-fluent {
+    margin-right: 0;
+    margin-left: 0;
+}
+
 .reflejo:hover {
     animation: reflejo 0.3s;
 }
 
 .manita {
-    cursor: pointer;
+    cursor: pointer !important;
 }
 
-.my-border-dark {
-    border: 3px solid var(--base-dark);
-    -webkit-box-shadow: 0px 0px 10px 1px var(--shadow-color-light);
-    -moz-box-shadow: 0px 0px 10px 1px var(--shadow-color-light);
-    box-shadow: 0px 0px 10px 1px var(--shadow-color-light);
+.flechita {
+    cursor: default !important;
 }
 
-.my-border-light {
-    border: 3px solid var(--base-light);
-    -webkit-box-shadow: 0px 0px 10px 1px var(--shadow-color-dark);
-    -moz-box-shadow: 0px 0px 10px 1px var(--shadow-color-dark);
-    box-shadow: 0px 0px 10px 1px var(--shadow-color-dark);
-}
-
-.my-btn-light {
-    border: none;
-    border-radius: 25px;
-    padding: 10px;
-    background-color: var(--base-light);
-    color: #000;
-    font-size: 1.2em;
-    cursor: pointer;
-}
-
-.my-btn-dark {
-    border: none;
-    border-radius: 25px;
-    padding: 10px;
-    background-color: var(--base-dark);
-    color: #fff;
-    font-size: 1.2em;
-    cursor: pointer;
-}
-
-
-.my-input {
-    border-radius: 25px;
-    padding: 15px;
-    background-color: #0000;
-    color: #ccc;
-    font-size: 1.2em;
-    border: 3px solid var(--base-dark);
-}
-
-.my-input:focus {
-    outline: none;
-}
-
-.input-text:hover {
-    cursor: text;
+.mouse-block {
+    cursor: not-allowed !important;
 }
 
 .zoom:hover {
     animation: zoom 1s;
+}
+
+.bg-primary-d {
+    background-color: var(--my-bg-primary-dark);
+}
+
+.btn {
+    border-radius: 35px;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: #fff;
+    border-radius: 0 50px 50px 0;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 50px;
+    background: #888;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+
+body::-webkit-scrollbar {
+    -webkit-appearance: none;
+    display: none;
+}
+
+.custom-select {
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 2px;
+}
+
+.bg-par {
+    background-color: #444;
+    color: #fff;
+}
+
+.bg-impar {
+    background-color: #888;
+}
+
+
+
+/* width, height */
+::-webkit-scrollbar {
+    width: 3px !important;
+    height: 3px !important;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #0000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #000;
+    border-radius: 35px !important;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Handle on active */
+::-webkit-scrollbar-thumb:active {
+    background: #aaa;
+}
+
+
+.text-icon svg {
+    height: 25px;
+    width: 25px;
+}
+
+.divisor-light {
+    border-top: 3px solid #000;
+}
+.divisor-dark {
+    border-top: 4px solid #fff;
+}
+
+.full-page-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    z-index: -100;
+}
+.page-light {
+    background-color: #f8f9fa;
+    color: #000;
+}
+.page-dark {
+    background-color: #212529;
+    color: #fff;
+}
+
+.myinput {
+    border-radius: 15px;
+    height: 35px;
 }
