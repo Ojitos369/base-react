@@ -1,6 +1,6 @@
 import React from 'react';
 import { AllContext } from '../../App/MyContext';
-import { ThemeChanged } from '../Modals/ThemeChanged';
+import { ModalThemeChanged } from '../Modals/ModalThemeChanged';
 
 function MyComponent() {
     const { ls, lf, s, f, Icons } = React.useContext(AllContext);
@@ -18,7 +18,8 @@ function MyComponent() {
                     Change Theme <span className='text-icon'>{icons.brush()}</span>
                 </button>
             </div>
-            {s.modals?.themes?.changed && <ThemeChanged />}
+            {/* {s.modals?.themes?.changed && <ModalThemeChanged zindex={-1} />} */}
+            {s.modals?.themes?.changed && <ModalThemeChanged />}
         </React.Fragment>
     )
 }

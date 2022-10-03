@@ -1,9 +1,10 @@
 import React from 'react';
 import { AllContext } from '../../App/MyContext';
 
-function ThemeChanged({}) {
-    const { ls, Icons, s, f } = React.useContext(AllContext);
-    const icons = new Icons();
+function ModalThemeChanged(props) {
+    const { ls, s, f } = React.useContext(AllContext);
+    
+    const ztyle = props.zindex ? {zIndex: props.zindex} : {};
 
     const close = () => {
         f.upgradeLvl2('modals', 'themes', 'changed', false);
@@ -23,10 +24,11 @@ function ThemeChanged({}) {
     return (
         <div
             className="modal-info"
+            style={{...ztyle}}
             onClick={close}
             >
             <div 
-                className={`container modal-container pb-5 pt-5 modal-${ls.theme}`}
+                className={`container modal-container modal-container-50 pb-5 pt-5 modal-${ls.theme}`}
                 style={{...s.styles.basicStyle}}
                 onClick={e => e.stopPropagation()}
                 >
@@ -38,4 +40,4 @@ function ThemeChanged({}) {
     )
 }
 
-export { ThemeChanged };
+export { ModalThemeChanged };

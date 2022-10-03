@@ -3,7 +3,8 @@ import { AllContext } from '../../App/MyContext';
 
 function BaseModal({}) {
     const { ls, Icons, s, f } = React.useContext(AllContext);
-    const icons = new Icons();
+    
+    const ztyle = props.zindex ? {zIndex: props.zindex} : {};
 
     const close = () => {
         f.upgradeLvl2('modals', 'exampleBase', 'example', false);
@@ -23,10 +24,11 @@ function BaseModal({}) {
     return (
         <div
             className="modal-info"
+            style={{...ztyle}}
             onClick={close}
             >
             <div 
-                className={`container modal-container pb-5 pt-5 modal-${ls.theme}`}
+                className={`container modal-container modal-container-50 pb-5 pt-5 modal-${ls.theme}`}
                 style={{...s.styles.basicStyle}}
                 onClick={e => e.stopPropagation()}
                 >
