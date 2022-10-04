@@ -29,7 +29,7 @@ function ModalThemeChanged(props) {
             >
             <div 
                 className={`container modal-container modal-container-50 pb-5 pt-5 modal-${ls.theme}`}
-                style={{...s.styles.basicStyle}}
+                style={{...s.styles.basic}}
                 onClick={e => e.stopPropagation()}
                 >
                 <div className="row justify-content-around">

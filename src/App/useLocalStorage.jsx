@@ -5,10 +5,13 @@ const updateInitialState = (f, ls) => {
     let styles = {}
     if (ls.theme === 'light') {
         classNames = {
-            generalStyles: 'bg-light text-dark',
-            more: 'light',
+            general: 'bg-light text-dark',
+            text: 'text-dark',
+            bg: 'bg-light',
+            textReversed: 'text-light',
+            bgReversed: 'bg-dark',
             less: 'dark',
-            generalStylesReversed: 'bg-dark text-light',
+            more: 'light',
         }
         styles = {
             border: {
@@ -17,11 +20,11 @@ const updateInitialState = (f, ls) => {
             borderReversed: {
                 border: '1px solid #f8f9fa',
             },
-            basicStyle: {
+            basic: {
                 backgroundColor: '#f8f9fa',
                 color: '#212529',
             },
-            basicStyleReversed: {
+            basicReversed: {
                 backgroundColor: '#212529',
                 color: '#f8f9fa',
             },
@@ -40,10 +43,13 @@ const updateInitialState = (f, ls) => {
         }
     } else if (ls.theme === 'dark') {
         classNames = {
-            generalStyles: 'bg-dark text-light',
-            more: 'dark',
+            general: 'bg-dark text-light',
+            text: 'text-light',
+            bg: 'bg-dark',
+            textReversed: 'text-dark',
+            bgReversed: 'bg-light',
             less: 'light',
-            generalStylesReversed: 'bg-light text-dark',
+            more: 'dark',
         }
         styles = {
             border: {
@@ -52,11 +58,11 @@ const updateInitialState = (f, ls) => {
             borderReversed: {
                 border: '1px solid #212529',
             },
-            basicStyle: {
+            basic: {
                 backgroundColor: '#212529',
                 color: '#f8f9fa',
             },
-            basicStyleReversed: {
+            basicReversed: {
                 backgroundColor: '#f8f9fa',
                 color: '#212529',
             },
@@ -82,6 +88,8 @@ const updateInitialState = (f, ls) => {
     // f.changeLoading(false);
     f.upgradeLvl0('loading', false);
 }
+
+
 function useLocalStorage(itemName, initialValue, f) {
     const [state, dispatch] = React.useReducer(reducer, initialValue);
 
