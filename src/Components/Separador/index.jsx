@@ -19,7 +19,7 @@ function Separador(props) {
     */
 
     const { s } = React.useContext(AllContext);
-    let bg = (props?.bg ? {backgroundColor: props.bg} : null) || s.styles.basiceReversed;
+    let bg = (props?.bg ? {backgroundColor: props.bg} : null) || (s?.styles?.basiceReversed || {});
     let bglt = (props?.bglt ? {backgroundColor: props.bglt} : null) || bg;
     let bglc = (props?.bglc ? {backgroundColor: props.bglc} : null) || bg;
     let bglb = (props?.bglb ? {backgroundColor: props.bglb} : null) || bg;
