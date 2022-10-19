@@ -7,7 +7,7 @@ function BaseModal(props) {
     const ztyle = props.zindex ? {zIndex: props.zindex} : {};
 
     const close = () => {
-        f.upgradeLvl2('modals', 'exampleBase', 'example', false);
+        f.l.upgradeLvl2('modals', 'exampleBase', 'example', false);
     }
     const closeModal = e => {
         if (e.key === 'Escape') {

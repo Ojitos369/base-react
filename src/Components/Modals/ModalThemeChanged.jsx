@@ -7,7 +7,7 @@ function ModalThemeChanged(props) {
     const ztyle = props.zindex ? {zIndex: props.zindex} : {};
 
     const close = () => {
-        f.upgradeLvl2('modals', 'themes', 'changed', false);
+        f.l.upgradeLvl2('modals', 'themes', 'changed', false);
     }
     const closeModal = e => {
         if (e.key === 'Escape') {

@@ -1,10 +1,6 @@
 import React from 'react'
 
 class Icons {
-    constructor(s, ls) {
-        this.s = s;
-        this.ls = ls;
-    }
 
     cliente() {
       return (
