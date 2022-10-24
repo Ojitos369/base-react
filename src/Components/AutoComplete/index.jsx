@@ -72,7 +72,7 @@ function AutoComplete() {
                             f.l.upgradeLvl1('info','text_temp', value);
                         }}
                         rows="10">
-                        </textarea>
+                    </textarea>
                 </div>
             </div>
             {/* {s.modals?.themes?.changed && <ModalThemeChanged zindex={-1} />} */}
