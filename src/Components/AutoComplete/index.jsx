@@ -22,20 +22,20 @@ function AutoComplete() {
         let key = e.nativeEvent.data;
         const old_value = s?.info?.test || '';
         const selectionStart = e.target.selectionStart;
-        f.l.upgradeLvl1('info','selection', [0,0]);
+        f.upgradeLvl1('info','selection', [0,0]);
         if (!!key && !!values_complete[key]) {
-            f.l.upgradeLvl1('info','loadingChange', true);
+            f.upgradeLvl1('info','loadingChange', true);
             if (!s?.info?.text_temp) {
                 value = old_value.slice(0, selectionStart - 1) + key + values_complete[key] + old_value.slice(selectionStart - 1);
-                f.l.upgradeLvl1('info','selection', [selectionStart, selectionStart]);
+                f.upgradeLvl1('info','selection', [selectionStart, selectionStart]);
             } else {
                 value = old_value.slice(0, selectionStart - 1) + key + s?.info?.text_temp + values_complete[key] + old_value.slice(selectionStart + s?.info?.text_temp.length - 1);
-                f.l.upgradeLvl1('info','selection', [selectionStart, selectionStart + s?.info?.text_temp.length]);
+                f.upgradeLvl1('info','selection', [selectionStart, selectionStart + s?.info?.text_temp.length]);
             }
-            f.l.upgradeLvl1('info','loadingChange', false);
+            f.upgradeLvl1('info','loadingChange', false);
         }
-        f.l.upgradeLvl1('info','test', value);
-        f.l.upgradeLvl1('info','text_temp', '');
+        f.upgradeLvl1('info','test', value);
+        f.upgradeLvl1('info','text_temp', '');
     }
     
     React.useEffect(() => {
@@ -69,7 +69,7 @@ function AutoComplete() {
                             const selectionStart = e.target.selectionStart;
                             let value = e.target.value;
                             value = value.substring(selectionStart, selectionEnd);
-                            f.l.upgradeLvl1('info','text_temp', value);
+                            f.upgradeLvl1('info','text_temp', value);
                         }}
                         rows="10">
                     </textarea>

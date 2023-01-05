@@ -82,11 +82,11 @@ const updateInitialState = (f, ls) => {
         
     }
     // f.updateClassNames(classNames);
-    f.l.upgradeLvl0('classNames', classNames);
+    f.upgradeLvl0('classNames', classNames);
     // f.updateStyles(styles);
-    f.l.upgradeLvl0('styles', styles);
+    f.upgradeLvl0('styles', styles);
     // f.changeLoading(false);
-    f.l.upgradeLvl0('loading', false);
+    f.upgradeLvl0('loading', false);
 }
 
 
@@ -160,7 +160,7 @@ class localFunctions {
         };
         this.ld(clone_state);
         updateInitialState(this.f, clone_state);
-        this.f.l.upgradeLvl2('modals', 'themes', 'changed', true);
+        this.f.upgradeLvl2('modals', 'themes', 'changed', true);
     }
 }
 

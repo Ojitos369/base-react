@@ -1,0 +1,205 @@
+/* ---------------------------   SUCCESS #198754   --------------------------- */
+.b-success, .b-success:focus {
+    border: 1px solid #198754 !important;
+}
+.b-success-2, .b-success-2:focus {
+    border: 2px solid #198754 !important;
+}
+.b-success-3, .b-success-3:focus {
+    border: 3px solid #198754 !important;
+}
+.b-success-4, .b-success-4:focus {
+    border: 4px solid #198754 !important;
+}
+.b-success-5, .b-success-5:focus {
+    border: 5px solid #198754 !important;
+}
+
+.btn-success, .btn-success:focus {
+    background-color: #198754;
+    color: #000;
+}
+
+.btn-success:hover {
+    background: #198754;
+    color: #000;
+    border: 1px solid #000 !important;
+}
+
+/* ---------------------------   /SUCCESS #198754   --------------------------- */
+
+
+
+/* ---------------------------   PRIMARY #0d6efd   --------------------------- */
+.b-primary, .b-primary:focus {
+    border: 1px solid #0d6efd !important;
+}
+.b-primary-2, .b-primary-2:focus {
+    border: 2px solid #0d6efd !important;
+}
+.b-primary-3, .b-primary-3:focus {
+    border: 3px solid #0d6efd !important;
+}
+.b-primary-4, .b-primary-4:focus {
+    border: 4px solid #0d6efd !important;
+}
+.b-primary-5, .b-primary-5:focus {
+    border: 5px solid #0d6efd !important;
+}
+
+.btn-primary, .btn-primary:focus {
+    background-color: #0d6efd;
+    color: #000;
+}
+
+.btn-primary:hover {
+    background: #0d6efd;
+    color: #000;
+    border: 1px solid #000 !important;
+}
+
+/* ---------------------------   /PRIMARY #0d6efd   --------------------------- */
+
+
+
+/* ---------------------------   ORANGE #fd7e14   --------------------------- */
+.text-orange {
+    color: #fd7e14;
+}
+
+.b-orange, .b-orange:focus {
+    border: 1px solid #fd7e14 !important;
+}
+.b-orange-2, .b-orange-2:focus {
+    border: 2px solid #fd7e14 !important;
+}
+.b-orange-3, .b-orange-3:focus {
+    border: 3px solid #fd7e14 !important;
+}
+.b-orange-4, .b-orange-4:focus {
+    border: 4px solid #fd7e14 !important;
+}
+.b-orange-5, .b-orange-5:focus {
+    border: 5px solid #fd7e14 !important;
+}
+
+.btn-orange, .btn-orange:focus {
+    background-color: #fd7e14;
+    color: #000;
+}
+
+.btn-orange-outline {
+    background-color: transparent;
+    color: #fd7e14;
+    border: 1px solid #fd7e14 !important;
+}
+
+.btn-orange-outline:hover {
+    background-color: #fd7e14;
+    color: #000;
+    border: 1px solid #fd7e14 !important;
+}
+
+.btn-orange:hover {
+    background-color: #fd7e14;
+    color: #000;
+    border: 1px solid #000 !important;
+}
+
+/* ---------------------------   /ORANGE #fd7e14   --------------------------- */
+
+
+
+/* ---------------------------   DANGER #dc3545   --------------------------- */
+.b-danger, .b-danger:focus {
+    border: 1px solid #dc3545 !important;
+}
+.b-danger-2, .b-danger-2:focus {
+    border: 2px solid #dc3545 !important;
+}
+.b-danger-3, .b-danger-3:focus {
+    border: 3px solid #dc3545 !important;
+}
+.b-danger-4, .b-danger-4:focus {
+    border: 4px solid #dc3545 !important;
+}
+.b-danger-5, .b-danger-5:focus {
+    border: 5px solid #dc3545 !important;
+}
+
+.btn-danger, .btn-danger:focus {
+    background-color: #dc3545;
+    color: #000;
+}
+
+.btn-danger:hover {
+    background: #dc3545;
+    color: #000;
+    border: 1px solid #000 !important;
+}
+
+/* ---------------------------   DANGER #dc3545   --------------------------- */
+
+
+
+/* ---------------------------   PURPLE #800080   --------------------------- */
+.b-purple, .b-purple:focus {
+    border: 1px solid #800080 !important;
+}
+.b-purple-2, .b-purple-2:focus {
+    border: 2px solid #800080 !important;
+}
+.b-purple-3, .b-purple-3:focus {
+    border: 3px solid #800080 !important;
+}
+.b-purple-4, .b-purple-4:focus {
+    border: 4px solid #800080 !important;
+}
+.b-purple-5, .b-purple-5:focus {
+    border: 5px solid #800080 !important;
+}
+
+.btn-purple, .btn-purple:focus {
+    background-color: #800080;
+    color: #fff;
+}
+
+.btn-purple:hover {
+    background: #800080;
+    color: #fff;
+    border: 1px solid #fff !important;
+}
+
+/* ---------------------------   PURPLE #800080   --------------------------- */
+
+
+
+/* ---------------------------   SECONDARY #6c757d   --------------------------- */
+.b-secondary, .b-secondary:focus {
+    border: 1px solid #6c757d !important;
+}
+.b-secondary-2, .b-secondary-2:focus {
+    border: 2px solid #6c757d !important;
+}
+.b-secondary-3, .b-secondary-3:focus {
+    border: 3px solid #6c757d !important;
+}
+.b-secondary-4, .b-secondary-4:focus {
+    border: 4px solid #6c757d !important;
+}
+.b-secondary-5, .b-secondary-5:focus {
+    border: 5px solid #6c757d !important;
+}
+
+.btn-secondary, .btn-secondary:focus {
+    background-color: #6c757d;
+    color: #000;
+}
+
+.btn-secondary:hover {
+    background: #6c757d;
+    color: #000;
+    border: 1px solid #000 !important;
+}
+
+/* ---------------------------   /SECONDARY #6c757d   --------------------------- */
