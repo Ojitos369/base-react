@@ -34,9 +34,7 @@ const reducerObject =  (state, actionTypes, payload = null) => ({
         ...state,
         ...payload?.value,
     },
-    [actionTypes.levels.setLvl0]: {
-        ...payload?.value,
-    },
+    [actionTypes.levels.setLvl0]: payload?.value,
 
 
     [actionTypes.levels.upgradeLvl1]: {
@@ -48,7 +46,7 @@ const reducerObject =  (state, actionTypes, payload = null) => ({
     },
     [actionTypes.levels.setLvl1]: {
         ...state,
-        [payload?.lvl1]: {...payload?.value},
+        [payload?.lvl1]: payload?.value,
     },
 
     [actionTypes.levels.upgradeLvl2]: {
@@ -65,7 +63,7 @@ const reducerObject =  (state, actionTypes, payload = null) => ({
         ...state,
         [payload?.lvl1]: {
             ...state[payload?.lvl1] || {},
-            [payload?.lvl2]: {...payload?.value},
+            [payload?.lvl2]: payload?.value,
         }
     },
 
@@ -88,7 +86,7 @@ const reducerObject =  (state, actionTypes, payload = null) => ({
             ...state[payload?.lvl1] || {},
             [payload?.lvl2]: {
                 ...state[payload?.lvl1]?.[payload?.lvl2] || {},
-                [payload?.lvl3]: {...payload?.value},
+                [payload?.lvl3]: payload?.value,
             }
         }
     },
@@ -117,7 +115,7 @@ const reducerObject =  (state, actionTypes, payload = null) => ({
                 ...state[payload?.lvl1]?.[payload?.lvl2] || {},
                 [payload?.lvl3]: {
                     ...state[payload?.lvl1]?.[payload?.lvl2]?.[payload?.lvl3] || {},
-                    [payload?.lvl4]: {...payload?.value},
+                    [payload?.lvl4]: payload?.value,
                 }
             }
         }
@@ -152,7 +150,7 @@ const reducerObject =  (state, actionTypes, payload = null) => ({
                     ...state[payload?.lvl1]?.[payload?.lvl2]?.[payload?.lvl3] || {},
                     [payload?.lvl4]: {
                         ...state[payload?.lvl1]?.[payload?.lvl2]?.[payload?.lvl3]?.[payload?.lvl4] || {},
-                        [payload?.lvl5]: {...payload?.value},
+                        [payload?.lvl5]: payload?.value,
                     }
                 }
             }
@@ -188,9 +186,9 @@ class functions {
         this.d({ type: actionTypes.levels.upgradeLvl0, payload: data });
     }
 
-    setLvl0 = (field_name, value) => {
+    setLvl0 = (value) => {
         const data = {
-            value: {[field_name]: value},
+            value: value,
         }
         this.d({ type: actionTypes.levels.setLvl0, payload: data });
     }
@@ -210,10 +208,10 @@ class functions {
         this.d({ type: actionTypes.levels.upgradeLvl1, payload: data });
     }
 
-    setLvl1 = (name1, field_name, value) => {
+    setLvl1 = (name1, value) => {
         const data = {
             lvl1: name1,
-            value: {[field_name]: value},
+            value: value,
         }
         this.d({ type: actionTypes.levels.setLvl1, payload: data });
     }
@@ -235,11 +233,11 @@ class functions {
         this.d({ type: actionTypes.levels.upgradeLvl2, payload: data });
     }
 
-    setLvl2 = (name1, name2, field_name, value) => {
+    setLvl2 = (name1, name2, value) => {
         const data = {
             lvl1: name1,
             lvl2: name2,
-            value: {[field_name]: value},
+            value: value,
         }
         this.d({ type: actionTypes.levels.setLvl2, payload: data });
     }
@@ -263,12 +261,12 @@ class functions {
         this.d({ type: actionTypes.levels.upgradeLvl3, payload: data });
     }
 
-    setLvl3 = (name1, name2, name3, field_name, value) => {
+    setLvl3 = (name1, name2, name3, value) => {
         const data = {
             lvl1: name1,
             lvl2: name2,
             lvl3: name3,
-            value: {[field_name]: value},
+            value: value,
         }
         this.d({ type: actionTypes.levels.setLvl3, payload: data });
     }
@@ -294,13 +292,13 @@ class functions {
         this.d({ type: actionTypes.levels.upgradeLvl4, payload: data });
     }
 
-    setLvl4 = (name1, name2, name3, name4, field_name, value) => {
+    setLvl4 = (name1, name2, name3, name4, value) => {
         const data = {
             lvl1: name1,
             lvl2: name2,
             lvl3: name3,
             lvl4: name4,
-            value: {[field_name]: value},
+            value: value,
         }
         this.d({ type: actionTypes.levels.setLvl4, payload: data });
     }
@@ -328,14 +326,14 @@ class functions {
         this.d({ type: actionTypes.levels.upgradeLvl5, payload: data });
     }
 
-    setLvl5 = (name1, name2, name3, name4, name5, field_name, value) => {
+    setLvl5 = (name1, name2, name3, name4, name5, value) => {
         const data = {
             lvl1: name1,
             lvl2: name2,
             lvl3: name3,
             lvl4: name4,
             lvl5: name5,
-            value: {[field_name]: value},
+            value: value,
         }
         this.d({ type: actionTypes.levels.setLvl5, payload: data });
     }
@@ -351,7 +349,7 @@ class functions {
         }
         this.d({ type: actionTypes.levels.setLvl5, payload: data });
     }
-    
+
 }
 
 export { reducer, actionTypes, functions };
