@@ -20,7 +20,7 @@ pnpm run dev
   
 ### El en Navegador Abrir  
 `http://localhost:5173/`  
-> * O la dirección que indique en consola, por defecto: `http://localhost:5173/`  
+> O la dirección que indique en consola, por defecto: `http://localhost:5173/`  
   
   
 ### Para compilar  
@@ -31,3 +31,7 @@ pnpm run build
 > El proyecto compilado se guardara en `dist/`  
   
   
+## Eliminar carpeta .git/ para iniciar con el proyecto     
+```bash
+rm -rf .git/
+```
