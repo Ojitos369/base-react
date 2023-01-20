@@ -23,18 +23,18 @@ function ModalThemeChanged(props) {
     }, [s.modals?.themes?.changed]);
     return (
         <div
-            className="modal-info"
+            className="modal-info basis-full flex justify-center"
             style={{...ztyle}}
             onClick={close}
             >
             <div 
-                className={`container modal-container modal-container-50 pb-5 pt-5 modal-${ls.theme}`}
-                style={{...s.styles.basic}}
+                className={`flex modal-container modal-container-50 pb-5 pt-5 modal-${ls.theme}`}
+                style={{...s?.styles?.basic}}
                 onClick={e => e.stopPropagation()}
                 >
-                <div className="row justify-content-around">
+                <h3 className="text-center basis-full text-bold">
                     Thema Cambiado a: {ls.theme}
-                </div>
+                </h3>
             </div>
         </div>
     )

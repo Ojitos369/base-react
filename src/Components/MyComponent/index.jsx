@@ -7,15 +7,17 @@ function MyComponent() {
     const icons = new Icons();
     return (
         <React.Fragment>
-            <div className='row justify-content-center pt-5 h2 fw-bold'>
-                <p className='col-12 text-center'>
+            <div className='flex flex-wrap justify-center'>
+                <h2 className={`text-center basis-full mt-3 font-bold text-3xl ${ls?.theme === 'dark' ? 'text-white' : 'text-black'}`}
+                >
                     Actual theme: {ls.theme}
-                </p>
+                </h2>
                 <button
-                    className="btn btn-primary col-5"
+                    className="btn btn-primary basis-1/4 mt-3"
                     onClick={lf.toggleTheme}
                     >
-                    Change Theme <span className='text-icon'>{icons.brush()}</span>
+                    Change Theme
+                    <span className='text-icon'>{icons.brush()}</span>
                 </button>
             </div>
             {/* {s.modals?.themes?.changed && <ModalThemeChanged zindex={-1} />} */}

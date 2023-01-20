@@ -7,6 +7,7 @@ import { HashRouter } from 'react-router-dom';
 import 'animate.css';
 
 // css
+import './static/css/tailwind.css';
 import './static/css/index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
