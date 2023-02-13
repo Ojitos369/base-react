@@ -8,7 +8,7 @@ function MyComponent() {
     return (
         <React.Fragment>
             <div className='flex flex-wrap justify-center'>
-                <h2 className={`text-center basis-full mt-3 font-bold text-3xl ${ls?.theme === 'black' ? 'my-text-success' : 'text-black'}`}
+                <h2 className={`text-center basis-full mt-3 font-bold text-3xl ${ls?.theme === 'black' ? 'text-white' : 'text-black'}`}
                 >
                     Actual theme: {ls.theme}
                 </h2>
