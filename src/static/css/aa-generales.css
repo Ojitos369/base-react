@@ -43,7 +43,7 @@ a:hover {
 }
 
 .bg-primary-d {
-    background-color: var(--my-bg-primary-dark);
+    background-color: var(--my-bg-primary-black);
 }
 
 .btn {
@@ -128,10 +128,10 @@ body::-webkit-scrollbar {
     width: 25px;
 }
 
-.divisor-light {
+.divisor-white {
     border-top: 3px solid #000;
 }
-.divisor-dark {
+.divisor-black {
     border-top: 4px solid #fff;
 }
 
@@ -145,11 +145,11 @@ body::-webkit-scrollbar {
     align-items: center;
     z-index: -100;
 }
-.page-light {
+.page-white {
     background-color: #f8f9fa;
     color: #000;
 }
-.page-dark {
+.page-black {
     background-color: #212529;
     color: #fff;
 }

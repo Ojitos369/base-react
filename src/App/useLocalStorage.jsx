@@ -3,15 +3,15 @@ import React from "react";
 const updateInitialState = (f, ls) => {
     let classNames = {}
     let styles = {}
-    if (ls.theme === 'light') {
+    if (ls.theme === 'white') {
         classNames = {
-            general: 'bg-light text-dark',
-            text: 'text-dark',
-            bg: 'bg-light',
-            textReversed: 'text-light',
-            bgReversed: 'bg-dark',
-            less: 'dark',
-            more: 'light',
+            general: 'bg-white text-black',
+            text: 'text-black',
+            bg: 'bg-white',
+            textReversed: 'text-white',
+            bgReversed: 'bg-black',
+            less: 'black',
+            more: 'white',
         }
         styles = {
             border: {
@@ -41,15 +41,15 @@ const updateInitialState = (f, ls) => {
                 borderTop: '1px solid #f8f9fa',
             }
         }
-    } else if (ls.theme === 'dark') {
+    } else if (ls.theme === 'black') {
         classNames = {
-            general: 'bg-dark text-light',
-            text: 'text-light',
-            bg: 'bg-dark',
-            textReversed: 'text-dark',
-            bgReversed: 'bg-light',
-            less: 'light',
-            more: 'dark',
+            general: 'bg-black text-white',
+            text: 'text-white',
+            bg: 'bg-black',
+            textReversed: 'text-black',
+            bgReversed: 'bg-white',
+            less: 'white',
+            more: 'black',
         }
         styles = {
             border: {
@@ -156,7 +156,7 @@ class localFunctions {
     toggleTheme = () => {
         let clone_state = {
             ...this.ls,
-            theme: (this.ls.theme === 'dark') ? 'light' : 'dark',
+            theme: (this.ls.theme === 'black') ? 'white' : 'black',
         };
         this.ld(clone_state);
         updateInitialState(this.f, clone_state);

@@ -10,10 +10,10 @@ function AppUI() {
     return (
         <div className={`text-${s.classNames.less}`}>
             <div 
-                className={`full-page-container page-dark animate__animated ${ls.theme === 'dark' ? 'animate__fadeInLeft' : 'animate__fadeOutRight'}`}
+                className={`full-page-container page-black animate__animated ${ls.theme === 'black' ? 'animate__fadeInLeft' : 'animate__fadeOutRight'}`}
             ></div>
             <div 
-                className={`full-page-container page-light animate__animated ${ls.theme === 'light' ? 'animate__fadeInLeft' : 'animate__fadeOutBottomRight'}`}
+                className={`full-page-container page-white animate__animated ${ls.theme === 'white' ? 'animate__fadeInLeft' : 'animate__fadeOutBottomRight'}`}
             ></div>
             <Routes>
                 {/* -----------   Home   ----------- */}
