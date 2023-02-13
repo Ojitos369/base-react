@@ -1,3 +1,12 @@
 :root {
     --my-bg-dark: #000;
+    --my-success: #198754;
+    --my-primary: #0d6efd;
+    --my-orange: #fd7e14;
+    --my-danger: #dc3545;
+    --my-purple: #800080;
+    --my-secondary: #6c757d;
+    --my-dark: #212529;
+    --my-light: #f8f9fa;
 }
+
