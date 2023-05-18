@@ -1,20 +1,28 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { MyComponent } from '../Components/MyComponent';
 import { MyContext } from './MyContext';
 import { AllContext } from './MyContext';
+import { Theme } from '../Components/Theme';
+import { Test } from '../Components/Test';
 
 import { Route, Routes, Navigate } from 'react-router-dom';
+
+
+const BgTheme = () => {
+    const { ls } = React.useContext(AllContext);
+    return (
+        <Fragment>
+            <div className={`wipeInDown full-page-container bg-my-${ls.theme}`}></div>
+            <Theme />
+        </Fragment>
+    )
+}
 
 function AppUI() {
     const { s, ls, f, lf } = React.useContext(AllContext);
     return (
         <div className={`text-${s.classNames.less}`}>
-            <div 
-                className={`full-page-container page-black animate__animated ${ls.theme === 'black' ? 'animate__fadeInLeft' : 'animate__fadeOutRight'}`}
-            ></div>
-            <div 
-                className={`full-page-container page-white animate__animated ${ls.theme === 'white' ? 'animate__fadeInLeft' : 'animate__fadeOutBottomRight'}`}
-            ></div>
+            <BgTheme />
             <Routes>
                 {/* -----------   Home   ----------- */}
                 <Route
@@ -23,15 +31,21 @@ function AppUI() {
                         <MyComponent />
                     }
                 />
-                {/* -----------   Default   ----------- */}
+                {/* -----------   /Home   ----------- */}
+
+
+                {/* -----------   Test   ----------- */}
+                <Route
+                    path="test"
+                    element={
+                        <Test />
+                    }
+                />
+                {/* -----------   /Test   ----------- */}
 
                 {/* -----------   404   ----------- */}
-                <Route path="not-found/" element={<div className='text-danger h1 text-center mt-5'>404 Not Found</div>} />
+                <Route path="*/" element={<div className='text-danger h1 text-center mt-5'>404 Not Found</div>} />
                 {/* -----------   /404   ----------- */}
-
-                {/* -----------   Redirect   ----------- */}
-                <Route path="*" element={<Navigate to="/not-found/" />} />
-                {/* -----------   /Redirect   ----------- */}
 
             </Routes>
         </div>

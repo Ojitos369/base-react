@@ -3,3 +3,6 @@
 @import './colors.css';
 @import './icons.css';
 @import './modals.css';
+
+
+@import './theme/index.css';

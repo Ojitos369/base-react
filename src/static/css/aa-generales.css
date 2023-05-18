@@ -145,14 +145,6 @@ body::-webkit-scrollbar {
     align-items: center;
     z-index: -100;
 }
-.page-white {
-    background-color: #f8f9fa;
-    color: #000;
-}
-.page-black {
-    background-color: #212529;
-    color: #fff;
-}
 
 .myinput {
     border-radius: 15px;
@@ -166,4 +158,16 @@ body::-webkit-scrollbar {
     padding: 0 15px;
     height: 40px;
     justify-content: center;
+}
+
+
+.bg-my-black {
+    transition: all 0.5s;
+    background: #212121;
+    color: #fff;
+}
+.bg-my-white {
+    transition: all 0.5s;
+    background: #ffffff;
+    color: #000;
 }
