@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { MyComponent } from '../Components/MyComponent';
 import { MyContext } from './MyContext';
 import { AllContext } from './MyContext';
@@ -19,7 +19,12 @@ const BgTheme = () => {
 }
 
 function AppUI() {
-    const { s, ls, f, lf } = React.useContext(AllContext);
+    const { s, ls, hp } = React.useContext(AllContext);
+
+    useEffect(() => {
+        hp.cambiarThema(ls?.theme)
+    }, [ls?.theme]);
+
     return (
         <div className={`text-${s.classNames.less}`}>
             <BgTheme />

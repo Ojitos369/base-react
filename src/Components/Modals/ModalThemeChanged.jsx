@@ -28,7 +28,7 @@ function ModalThemeChanged(props) {
             onClick={close}
             >
             <div 
-                className={`flex modal-container modal-container-50 pb-5 pt-5 modal-${ls.theme}`}
+                className={`flex modal-container modal-container-50 pb-5 pt-5 my-modal`}
                 style={{...s?.styles?.basic}}
                 onClick={e => e.stopPropagation()}
                 >

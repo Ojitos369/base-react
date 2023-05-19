@@ -1,9 +1,6 @@
 
-.modal-white {
-    border: 1px #000 solid;
-}
-.modal-black {
-    border: 1px #fff solid;
+.my-modal {
+    border: 1px var(--my-minor) solid;
 }
 
 
