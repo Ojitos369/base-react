@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect, useContext, Fragment } from 'react';
 import { AllContext } from '../../App/MyContext';
 
-function BaseModal(props) {
-    const { ls, Icons, s, f } = React.useContext(AllContext);
+const BaseModal = props => {
+    const { ls, Icons, s, f } = useContext(AllContext);
     
     const ztyle = props.zindex ? {zIndex: props.zindex} : {};
 
@@ -15,7 +15,7 @@ function BaseModal(props) {
             close();
         }
     }
-    React.useEffect(() => {
+    useEffect(() => {
         document.addEventListener('keydown', closeModal);
         return () => {
             document.removeEventListener('keydown', closeModal);
@@ -33,7 +33,7 @@ function BaseModal(props) {
                 onClick={e => e.stopPropagation()}
                 >
                 Content Here
-                <div className="row justify-content-around">
+                <div className="flex flex-row flex-wrap justify-around">
                     And Here :3
                 </div>
             </div>

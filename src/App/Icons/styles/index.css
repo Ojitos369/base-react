@@ -1,0 +1,13 @@
+.sun-icon .sun-primary {
+  fill: var(--my-secondary);
+}
+.sun-icon .sun-secondary {
+  fill: var(--my-yellow);
+}
+
+.moon-icon .moon-primary {
+  fill: var(--my-secondary);
+}
+.moon-icon .moon-secondary {
+  fill: var(--my-yellow);
+}/*# sourceMappingURL=index.css.map */

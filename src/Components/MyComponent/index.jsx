@@ -2,13 +2,15 @@ import React, { Fragment, useContext, useEffect, useState } from 'react';
 import { AllContext } from '../../App/MyContext';
 import { ModalThemeChanged } from '../Modals/ModalThemeChanged';
 
-function MyComponent() {
+import './styles/index.css';
+
+const MyComponent = props => {
     const { ls, lf, s, f, Icons } = useContext(AllContext);
     const icons = new Icons();
     return (
         <Fragment>
             <div className='flex flex-wrap justify-center'>
-                <h2 className={`text-center basis-full mt-3 font-bold text-3xl ${ls?.theme === 'black' ? 'text-white' : 'text-black'}`}
+                <h2 className={`text-center w-1/3 mt-3 font-bold text-3xl ${ls?.theme === 'black' ? 'text-white' : 'text-black'} reflejo`}
                 >
                     Actual theme: {ls.theme}
                 </h2>

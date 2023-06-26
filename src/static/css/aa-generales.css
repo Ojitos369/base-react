@@ -23,7 +23,7 @@ a:hover {
 }
 
 .reflejo:hover {
-    animation: reflejo 0.3s;
+    animation: reflejo 0.5s;
 }
 
 .manita {
@@ -163,11 +163,11 @@ body::-webkit-scrollbar {
 
 .bg-my-black {
     transition: all 0.5s;
-    background: #212121;
-    color: #fff;
+    background: var(--my-black);
+    color: var(--my-white);
 }
 .bg-my-white {
     transition: all 0.5s;
-    background: #ffffff;
-    color: #000;
+    background: var(--my-white);
+    color: var(--my-dark);
 }

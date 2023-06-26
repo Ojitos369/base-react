@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect } from 'react';
 import { AllContext } from '../../App/MyContext';
+import './styles/index.css';
 
 function Theme() {
     const { ls, lf, s, f, Icons } = React.useContext(AllContext);
