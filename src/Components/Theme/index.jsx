@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect } from 'react';
 import { AllContext } from '../../App/MyContext';
-import { Sun, Moon } from '/src/App/Icons';
+import { Sun, Moon } from '../../App/Icons';
 import styles from './styles/index.module.scss';
 // console.log(styles);
 
