@@ -1,5 +1,7 @@
 import React from 'react';
 import { AllContext } from '../../App/MyContext';
+import styles from '/src/Components/Modals/styles/index.module.scss';
+// console.log(styles);
 
 function ModalThemeChanged(props) {
     const { ls, s, f } = React.useContext(AllContext);
@@ -23,12 +25,12 @@ function ModalThemeChanged(props) {
     }, [s.modals?.themes?.changed]);
     return (
         <div
-            className="modal-info basis-full flex justify-center"
+            className={`${styles.modal_info}`}
             style={{...ztyle}}
             onClick={close}
             >
             <div 
-                className={`flex modal-container modal-container-50 pb-5 pt-5 my-modal`}
+                className={`flex ${styles.modal_container} ${styles.modal_container_50} pb-5 pt-5 ${styles.my_modal}`}
                 style={{...s?.styles?.basic}}
                 onClick={e => e.stopPropagation()}
                 >

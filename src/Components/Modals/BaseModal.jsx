@@ -1,8 +1,9 @@
 import React, { useEffect, useContext, Fragment } from 'react';
 import { AllContext } from '../../App/MyContext';
+import styles from '/src/Components/Modals/styles/index.module.scss';
 
 const BaseModal = props => {
-    const { ls, Icons, s, f } = useContext(AllContext);
+    const { ls, s, f } = useContext(AllContext);
     
     const ztyle = props.zindex ? {zIndex: props.zindex} : {};
 
@@ -23,12 +24,12 @@ const BaseModal = props => {
     }, [s.modals?.exampleBase?.example]);
     return (
         <div
-            className="modal-info"
+            className={`${styles.modal_info}`}
             style={{...ztyle}}
             onClick={close}
             >
             <div 
-                className={`container modal-container modal-container-50 pb-5 pt-5 my-modal`}
+                className={`flex ${styles.modal_container} ${styles.modal_container_50} pb-5 pt-5 ${styles.my_modal}`}
                 style={{...s.styles.basic}}
                 onClick={e => e.stopPropagation()}
                 >

@@ -2,11 +2,11 @@ import React, { Fragment, useContext, useEffect, useState } from 'react';
 import { AllContext } from '../../App/MyContext';
 import { ModalThemeChanged } from '../Modals/ModalThemeChanged';
 
-import './styles/index.css';
+
+import './styles/index.module.css';
 
 const MyComponent = props => {
-    const { ls, lf, s, f, Icons } = useContext(AllContext);
-    const icons = new Icons();
+    const { ls, lf, s, f } = useContext(AllContext);
     return (
         <Fragment>
             <div className='flex flex-wrap justify-center'>

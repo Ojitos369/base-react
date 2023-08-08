@@ -1,18 +1,19 @@
 import React, { Fragment, useEffect } from 'react';
 import { AllContext } from '../../App/MyContext';
-import './styles/index.css';
+import { Sun, Moon } from '/src/App/Icons';
+import styles from './styles/index.module.scss';
+// console.log(styles);
 
 function Theme() {
-    const { ls, lf, s, f, Icons } = React.useContext(AllContext);
-    const icons = new Icons();
+    const { ls, lf, s, f } = React.useContext(AllContext);
     return (
         <button
-            className='toggle-theme-button'
-            id='toggle-theme-container'
+            className={`${styles.toggle_theme_button}`}
+            id='toggle_theme_button'
             onClick={lf.toggleTheme}
             >
             <span>
-                {ls.theme === 'white' ? icons.sun() : icons.moon()}
+                {ls.theme === 'white' ? Sun() : Moon()}
             </span>
         </button>
     )

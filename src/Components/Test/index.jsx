@@ -2,8 +2,7 @@ import React, { Fragment } from 'react';
 import { AllContext } from '../../App/MyContext';
 
 function Test() {
-    const { ls, lf, s, f, Icons } = React.useContext(AllContext);
-    const icons = new Icons();
+    const { ls, lf, s, f } = React.useContext(AllContext);
     return (
         <React.Fragment>
             Component to make tests
