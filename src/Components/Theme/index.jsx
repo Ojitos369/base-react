@@ -13,7 +13,7 @@ function Theme() {
             onClick={lf.toggleTheme}
             >
             <span>
-                {ls.theme === 'white' ? Sun() : Moon()}
+                {ls.theme === 'white' ? <Sun /> : <Moon />}
             </span>
         </button>
     )
