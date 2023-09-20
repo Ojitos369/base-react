@@ -4,9 +4,15 @@ import { AllContext } from '../../App/MyContext';
 function Separador(props) {
     /*
         bg = background
-        bglt = background line top
-        bglc = background line center
-        bglb = background line bottom
+
+        bgmt = size margin top
+        bglt = size line top
+        bgst = size space top
+        bglc = size line center
+        bgsb = size space bottom
+        bglb = size line bottom
+        bgmb = size margin bottom
+
         smt = size margin top
         slt = size line top
         sst = size space top
@@ -18,105 +24,53 @@ function Separador(props) {
         width = width (1 - 12)
     */
 
-    const { s } = React.useContext(AllContext);
-    let bg = (props?.bg ? {backgroundColor: props.bg} : null) || (s?.styles?.basiceReversed || {});
-    let bglt = (props?.bglt ? {backgroundColor: props.bglt} : null) || bg;
-    let bglc = (props?.bglc ? {backgroundColor: props.bglc} : null) || bg;
-    let bglb = (props?.bglb ? {backgroundColor: props.bglb} : null) || bg;
+    let bg = props.bg || '#0000';
 
+    // const mt = `flex w-${props.wmt || 'full'} h-[${props.smt || 0}px] bg-[${props.bgmt || bg}]`;
+    const mt = {width: `${(props.wmt || 100)}%`, height: `${(props.smt || 0)}px`, background: `${(props.bgmt || bg)}`};
+    const lt = {width: `${(props.wlt || 100)}%`, height: `${(props.slt || 0)}px`, background: `${(props.bglt || bg)}`};
+    const st = {width: `${(props.wst || 100)}%`, height: `${(props.sst || 0)}px`, background: `${(props.bgst || bg)}`};
+    const lc = {width: `${(props.wlc || 100)}%`, height: `${(props.slc || 0)}px`, background: `${(props.bglc || bg)}`};
+    const sb = {width: `${(props.wsb || 100)}%`, height: `${(props.ssb || 0)}px`, background: `${(props.bgsb || bg)}`};
+    const lb = {width: `${(props.wlb || 100)}%`, height: `${(props.slb || 0)}px`, background: `${(props.bglb || bg)}`};
+    const mb = {width: `${(props.wmb || 100)}%`, height: `${(props.smb || 0)}px`, background: `${(props.bgmb || bg)}`};
 
-    let smt = props.smt || 0;
-    smt = {height: `${smt}px`};
+    const align = props.align || 'center';
 
-    let slt = props.slt || 0;
-    slt = {height: `${slt}px`};
+    const cmt = `flex w-full justify-${props.amt || align} content-${props.amt || align} items-${props.amt || align} align-${props.amt || align}`
+    const clt = `flex w-full justify-${props.alt || align} content-${props.alt || align} items-${props.alt || align} align-${props.alt || align}`
+    const cst = `flex w-full justify-${props.ast || align} content-${props.ast || align} items-${props.ast || align} align-${props.ast || align}`
+    const clc = `flex w-full justify-${props.alc || align} content-${props.alc || align} items-${props.alc || align} align-${props.alc || align}`
+    const csb = `flex w-full justify-${props.asb || align} content-${props.asb || align} items-${props.asb || align} align-${props.asb || align}`
+    const clb = `flex w-full justify-${props.alb || align} content-${props.alb || align} items-${props.alb || align} align-${props.alb || align}`
+    const cmb = `flex w-full justify-${props.amb || align} content-${props.amb || align} items-${props.amb || align} align-${props.amb || align}`
 
-    let sst = props.sst || 0;
-    sst = {height: `${sst}px`};
-
-    let slc = props.slc || 0;
-    slc = {height: `${slc}px`};
-
-    let ssb = props.ssb || 0;
-    ssb = {height: `${ssb}px`};
-
-    let slb = props.slb || 0;
-    slb = {height: `${slb}px`};
-
-    let smb = props.smb || 0;
-    smb = {height: `${smb}px`};
-
-    let align = props.align || 'center';
-    align = 'justify-content-' + align;
-
-    let width = props.width || '12';
-    width = 'col-' + width;
-    
     return (
-        <React.Fragment>
-            <div className={`row ${align}`}>
-                {/* margin top */}
-                <div 
-                    className={`smt ${width}`}
-                    style = {{...smt}}
-                ></div>
-                {/* /margin top */}
+        <div className='flex flex-col flex-wrap w-full justify-center items-center content-center align-center'>
+
+            <div className={`${cmt}`}>
+                <div style={mt}></div>
+            </div>
+            <div className={`${clt}`}>
+                <div style={lt}></div>
+            </div>
+            <div className={`${cst}`}>
+                <div style={st}></div>
+            </div>
+            <div className={`${clc}`}>
+                <div style={lc}></div>
+            </div>
+            <div className={`${csb}`}>
+                <div style={sb}></div>
+            </div>
+            <div className={`${clb}`}>
+                <div style={lb}></div>
+            </div>
+            <div className={`${cmb}`}>
+                <div style={mb}></div>
             </div>
 
-            <div className={`row ${align}`}>
-                {/* linea top */}
-                <div 
-                    className={`slt ${width}`}
-                    style = {{...slt, ...bglt}}
-                ></div>
-                {/* /linea top */}
-            </div>
-
-            <div className={`row ${align}`}>
-                {/* space top */}
-                <div 
-                    className={`sst ${width}`}
-                    style = {{...sst}}
-                ></div>
-                {/* /space top */}
-            </div>
-
-            <div className={`row ${align}`}>
-                {/* linea center */}
-                <div 
-                    className={`slc ${width}`}
-                    style = {{...slc, ...bglc}}
-                ></div>
-                {/* /linea center */}
-            </div>
-
-            <div className={`row ${align}`}>
-                {/* space bottom */}
-                <div 
-                    className={`ssb ${width}`}
-                    style = {{...ssb}}
-                ></div>
-                {/* /space bottom */}
-            </div>
-
-            <div className={`row ${align}`}>
-                {/* linea bottom */}
-                <div 
-                    className={`slb ${width}`}
-                    style = {{...slb, ...bglb}}
-                ></div>
-                {/* /linea bottom */}
-            </div>
-
-            <div className={`row ${align}`}>
-                {/* margin bottom */}
-                <div
-                    className={`smb ${width}`}
-                    style = {{...smb}}
-                ></div>
-                {/* /margin bottom */}
-            </div>
-        </React.Fragment>
+        </div>
     )
 }
 

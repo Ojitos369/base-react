@@ -13,8 +13,7 @@ const values_complete = {
 }
 
 function AutoComplete() {
-    const { ls, lf, s, f, Icons } = React.useContext(AllContext);
-    const icons = new Icons();
+    const { ls, lf, s, f } = React.useContext(AllContext);
 
     const editData = e => {
         e.preventDefault();

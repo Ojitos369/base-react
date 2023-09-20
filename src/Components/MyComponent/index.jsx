@@ -1,28 +1,23 @@
-import React from 'react';
+import React, { Fragment, useContext, useEffect, useState } from 'react';
 import { AllContext } from '../../App/MyContext';
 import { ModalThemeChanged } from '../Modals/ModalThemeChanged';
 
-function MyComponent() {
-    const { ls, lf, s, f, Icons } = React.useContext(AllContext);
-    const icons = new Icons();
+
+import './styles/index.module.css';
+
+const MyComponent = props => {
+    const { ls, lf, s, f } = useContext(AllContext);
     return (
-        <React.Fragment>
+        <Fragment>
             <div className='flex flex-wrap justify-center'>
-                <h2 className={`text-center basis-full mt-3 font-bold text-3xl ${ls?.theme === 'black' ? 'text-white' : 'text-black'}`}
+                <h2 className={`text-center w-1/3 mt-3 font-bold text-3xl ${ls?.theme === 'black' ? 'text-white' : 'text-black'} reflejo`}
                 >
                     Actual theme: {ls.theme}
                 </h2>
-                <button
-                    className="btn btn-primary basis-1/4 mt-3"
-                    onClick={lf.toggleTheme}
-                    >
-                    Change Theme
-                    <span className='text-icon'>{icons.brush()}</span>
-                </button>
             </div>
             {/* {s.modals?.themes?.changed && <ModalThemeChanged zindex={-1} />} */}
             {s.modals?.themes?.changed && <ModalThemeChanged />}
-        </React.Fragment>
+        </Fragment>
     )
 }
 

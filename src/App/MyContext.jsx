@@ -4,9 +4,9 @@ import { useLocalStorage, localFunctions } from './useLocalStorage';
 import { reducer, functions } from './reducer';
 import { useReducer } from './useReducer';
 import { Link, useParams, useNavigate } from 'react-router-dom';
-import { Icons } from './Icons';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
+import { helper as hp } from './core/helper';
 
 const MySwal = withReactContent(Swal);
 
@@ -35,7 +35,7 @@ function MyContext(props){
         <AllContext.Provider
             value={{
                 s, f,
-                ls, lf, Icons,
+                ls, lf, hp, 
                 Link, useParams, useNavigate,
                 MySwal,
             }}>
