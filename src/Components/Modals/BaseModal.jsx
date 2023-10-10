@@ -1,28 +1,35 @@
 import React, { useEffect, useContext, Fragment } from 'react';
 import { AllContext } from '../../App/MyContext';
+import { useKeyDown, useKeyUp } from '../../App/myHooks';
 import styles from '/src/Components/Modals/styles/index.module.scss';
 
+
+const ListenKeys = props => {
+    const { keyExec } = props;
+    // ---------------------------------------------   KEYBOARD EVENTS   --------------------------------------------- #
+    useKeyDown(props.close, ['escape'], keyExec);
+    useKeyUp(null, ['any'], keyExec);
+    // ---------------------------------------------   /KEYBOARD EVENTS   --------------------------------------------- #
+
+    return null;
+}
+
 const BaseModal = props => {
-    const { ls, s, f } = useContext(AllContext);
-    
+    const { s, f } = useContext(AllContext);
+    const keyExec = !!s.modals?.exampleBase?.example;
     const ztyle = props.zindex ? {zIndex: props.zindex} : {};
 
     const close = () => {
         f.upgradeLvl2('modals', 'exampleBase', 'example', false);
     }
-    const closeModal = e => {
-        if (e.key === 'Escape') {
-            e.preventDefault();
-            close();
-        }
-    }
-    useEffect(() => {
-        document.addEventListener('keydown', closeModal);
-        return () => {
-            document.removeEventListener('keydown', closeModal);
-        }
-    }, [s.modals?.exampleBase?.example]);
+
     return (
+        <>
+        {keyExec && 
+        <ListenKeys 
+            keyExec={keyExec}
+            close={close}
+        />}
         <div
             className={`${styles.modal_info}`}
             style={{...ztyle}}
@@ -30,7 +37,6 @@ const BaseModal = props => {
             >
             <div 
                 className={`flex ${styles.modal_container} ${styles.modal_container_50} pb-5 pt-5 ${styles.my_modal}`}
-                style={{...s.styles.basic}}
                 onClick={e => e.stopPropagation()}
                 >
                 Content Here
@@ -39,6 +45,7 @@ const BaseModal = props => {
                 </div>
             </div>
         </div>
+        </>
     )
 }
 

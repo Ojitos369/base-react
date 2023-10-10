@@ -6,7 +6,6 @@ import { useReducer } from './useReducer';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
-import { helper as hp } from './core/helper';
 
 const MySwal = withReactContent(Swal);
 
@@ -15,9 +14,6 @@ const AllContext = React.createContext();
 function MyContext(props){
 
     const initialState = {
-        classNames: {
-            generalStyles: 'bg-white text-black',
-        }
     }
 
     const [s, dispatch] = useReducer({ reducer, initialState });
@@ -26,8 +22,8 @@ function MyContext(props){
     const localInitialState = {
         theme: 'black',
     }
-    // localStorage.removeItem('localStatev2');
-    const [ls, localDispatch] = useLocalStorage('localState', localInitialState, f);
+    // localStorage.removeItem('secondary_base');
+    const [ls, localDispatch] = useLocalStorage('secondary_base', localInitialState, f);
     const lf = new localFunctions(localDispatch, ls, s, f, dispatch);
 
 
@@ -35,7 +31,7 @@ function MyContext(props){
         <AllContext.Provider
             value={{
                 s, f,
-                ls, lf, hp, 
+                ls, lf,
                 Link, useParams, useNavigate,
                 MySwal,
             }}>

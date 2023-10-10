@@ -2,6 +2,7 @@ import React, { Fragment, useEffect } from 'react';
 import { MyComponent } from '../Components/MyComponent';
 import { MyContext } from './MyContext';
 import { AllContext } from './MyContext';
+import { cambiarThema } from './core/helper';
 import { Theme } from '../Components/Theme';
 import { Test } from '../Components/Test';
 
@@ -19,14 +20,14 @@ const BgTheme = () => {
 }
 
 function AppUI() {
-    const { s, ls, hp } = React.useContext(AllContext);
+    const { ls } = React.useContext(AllContext);
 
     useEffect(() => {
-        hp.cambiarThema(ls?.theme)
+        cambiarThema(ls?.theme);
     }, [ls?.theme]);
 
     return (
-        <div className={`text-${s.classNames.less}`}>
+        <div className={`text-[var(--my-minor)]`}>
             <BgTheme />
             <Routes>
                 {/* -----------   Home   ----------- */}
