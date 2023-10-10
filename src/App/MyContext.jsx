@@ -22,8 +22,8 @@ function MyContext(props){
     const localInitialState = {
         theme: 'black',
     }
-    // localStorage.removeItem('secondary_base');
-    const [ls, localDispatch] = useLocalStorage('secondary_base', localInitialState, f);
+    // localStorage.removeItem('react_base');
+    const [ls, localDispatch] = useLocalStorage('react_base', localInitialState, f);
     const lf = new localFunctions(localDispatch, ls, s, f, dispatch);
 
 
