@@ -6,7 +6,7 @@ import withReactContent from 'sweetalert2-react-content';
 const MySwal = withReactContent(Swal);
 
 let link = '';
-link = 'http://localhost:8000/'
+link = 'http://localhost:8369/'
 
 const actionTypes = {
     levels: {

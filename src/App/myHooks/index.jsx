@@ -2,16 +2,23 @@ import { useContext, useEffect } from 'react';
 import { AllContext } from '../MyContext';
 
 
-const useKeyDown = (callback, keys, keyExec) => {
+const useKeyDown = (callback, keys, keyExec, extras) => {
+    const element = document;
     const { s, f } = useContext(AllContext);
     const onKeyDown = (event) => {
         if (!keyExec) return;
-        const wasAnyKeyPressed = keys.some((key) => event.key.toLowerCase() === key.toLowerCase());
+        const evKey = event?.key?.toLowerCase();
+        const evCode = event?.code?.toLowerCase();
+        const evKeyCode = event?.keyCode;
+        const valids = [evKey, evCode, evKeyCode];
+        const actualKeys = Object.keys(s.shortCuts?.keys);
+        if (actualKeys.includes(evKey)) return;
+
+        const wasAnyKeyPressed = keys.some((key) => valids.includes(key.toLowerCase()));
         if (wasAnyKeyPressed) {
-            // event.preventDefault();
             let keys = {
                 ...s.shortCuts?.keys,
-                [event.key.toLowerCase()]: true,
+                [evKey]: true,
             }
             f.upgradeLvl1('shortCuts', 'keys', keys);
             if (!!callback) callback(event);
@@ -19,34 +26,39 @@ const useKeyDown = (callback, keys, keyExec) => {
     };
     useEffect(() => {
         if (!keyExec) return;
-        document.addEventListener('keydown', onKeyDown);
+        element.addEventListener('keydown', onKeyDown);
         return () => {
-        document.removeEventListener('keydown', onKeyDown);
+            element.removeEventListener('keydown', onKeyDown);
         };
     }, [onKeyDown, keyExec]);
 };
 
 
-const useKeyUp = (callback, keys, keyExec) => {
+const useKeyUp = (callback, keys, keyExec, extras) => {
+    const element = document;
     const { s, f } = useContext(AllContext);
     const onKeyUp = (event) => {
         if (!keyExec) return;
-        const wasAnyKeyPressed = keys.some((key) => event.key.toLowerCase() === key.toLowerCase()) || keys.includes('any');
+        const evKey = event?.key?.toLowerCase();
+        const evCode = event?.code?.toLowerCase();
+        const evKeyCode = event?.keyCode;
+        const valids = [evKey, evCode, evKeyCode];
+        const wasAnyKeyPressed = keys.some((key) => valids.includes(key.toLowerCase())) || keys.includes('any');
         if (wasAnyKeyPressed) {
             // event.preventDefault();
             let keys = {
                 ...s.shortCuts?.keys,
             }
-            delete keys[event.key.toLowerCase()];
+            delete keys[evKey];
             f.upgradeLvl1('shortCuts', 'keys', keys);
             if (!!callback) callback(event);
         }
     };
     useEffect(() => {
         if (!keyExec) return;
-        document.addEventListener('keyup', onKeyUp);
+        element.addEventListener('keyup', onKeyUp);
         return () => {
-        document.removeEventListener('keyup', onKeyUp);
+            element.removeEventListener('keyup', onKeyUp);
         };
     }, [onKeyUp, keyExec]);
 };
