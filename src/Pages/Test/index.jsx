@@ -1,8 +1,8 @@
-import { useContext } from 'react';
-import { AllContext } from '../../App/MyContext';
+import { useSelector } from "react-redux";
+import { useStates } from '../../App/useStates';
 
 function Test() {
-    const { ls, lf, s, f } = useContext(AllContext);
+    const { s, f, ls, lf } = useStates();
     return (
         <>
             Component to make tests

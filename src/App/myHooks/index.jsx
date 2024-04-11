@@ -1,10 +1,10 @@
-import { useContext, useEffect, useMemo } from 'react';
-import { AllContext } from '../MyContext';
+import { useEffect, useMemo } from 'react';
+import { useStates } from '../useStates';
 
 
 const useKeyDown = (callback, keys, keyExec, extras) => {
     const element = document;
-    const { s, f } = useContext(AllContext);
+    const { s, f } = useStates();
     const functionBlocked = useMemo(() => s.shortCuts?.functionBlocked || false, [s.shortCuts?.functionBlocked]);
     const press = extras?.press || [];
     const onKeyDown = (event) => {
@@ -25,7 +25,7 @@ const useKeyDown = (callback, keys, keyExec, extras) => {
                 ...s_keys,
                 [evKey]: true,
             }
-            f.upgradeLvl1('shortCuts', 'keys', keys);
+            f.u1('shortCuts', 'keys', keys);
             if (!!callback) callback(event);
         }
     };
@@ -40,7 +40,7 @@ const useKeyDown = (callback, keys, keyExec, extras) => {
 
 const useKeyUp = (callback, keys, keyExec, extras) => {
     const element = document;
-    const { s, f } = useContext(AllContext);
+    const { s, f } = useStates();
     const functionBlocked = useMemo(() => s.shortCuts?.functionBlocked || false, [s.shortCuts?.functionBlocked]);
     const onKeyUp = (event) => {
         if (!keyExec || functionBlocked) return;
@@ -56,7 +56,7 @@ const useKeyUp = (callback, keys, keyExec, extras) => {
                 ...s_keys,
             }
             delete keys[evKey];
-            f.upgradeLvl1('shortCuts', 'keys', keys);
+            f.u1('shortCuts', 'keys', keys);
             if (!!callback) callback(event);
         }
     };
@@ -70,7 +70,7 @@ const useKeyUp = (callback, keys, keyExec, extras) => {
 };
 
 const useLocalTab = (modalItem, modalRef, autoFocus=true) => {
-    const { s, f } = useContext(AllContext);
+    const { s, f } = useStates();
     useEffect(() => { 
         if (!modalItem) return;
 

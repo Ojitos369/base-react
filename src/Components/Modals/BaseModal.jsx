@@ -1,5 +1,5 @@
-import React, { useEffect, useContext, Fragment } from 'react';
-import { AllContext } from '../../App/MyContext';
+import React, { useEffect } from 'react';
+import { useStates } from '../../App/useStates';
 import { useKeyDown, useKeyUp } from '../../App/myHooks';
 import styles from '/src/Components/Modals/styles/index.module.scss';
 
@@ -15,12 +15,12 @@ const ListenKeys = props => {
 }
 
 const BaseModal = props => {
-    const { s, f } = useContext(AllContext);
+    const { s, f } = useStates();
     const keyExec = !!s.modals?.exampleBase?.example;
     const ztyle = props.zindex ? {zIndex: props.zindex} : {};
 
     const close = () => {
-        f.upgradeLvl2('modals', 'exampleBase', 'example', false);
+        f.u2('modals', 'exampleBase', 'example', false);
     }
 
     return (

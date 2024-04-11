@@ -1,5 +1,4 @@
-import { useContext } from 'react';
-import { AllContext } from '../../App/MyContext';
+import { useStates } from '../../App/useStates';
 import { GeneralModal } from './GeneralModal';
 
 const ModalThemeChanged = props => {
@@ -14,7 +13,7 @@ const ModalThemeChanged = props => {
 }
 
 const Content = props => {
-    const { ls } = useContext(AllContext);
+    const { ls } = useStates();
     return (
         <h3 className="text-center basis-full text-bold">
             Thema Cambiado a: {ls.theme}

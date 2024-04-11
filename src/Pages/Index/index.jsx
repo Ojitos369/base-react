@@ -1,13 +1,15 @@
-import { useContext, useMemo } from 'react';
-import { AllContext } from '../../App/MyContext';
+import { useEffect, useMemo } from 'react';
+import { useStates } from '../../App/useStates';
 import { ModalThemeChanged } from '../../Components/Modals/ModalThemeChanged';
 
 import './styles/index.module.css';
 
 const Index = props => {
-    const { ls, lf, s, f } = useContext(AllContext);
+    const { s, ls, f } = useStates();
+
     const theme = useMemo(() => ls.theme, [ls.theme]);
     const modalChangeTheme = useMemo(() => !!s.modals?.themes?.changed, [s.modals?.themes?.changed]);
+
     return (
         <>
             <div className='flex flex-wrap justify-center'>

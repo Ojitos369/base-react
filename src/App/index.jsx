@@ -1,6 +1,4 @@
-import { useContext, useEffect } from 'react';
-import { MyContext } from './MyContext';
-import { AllContext } from './MyContext';
+import { useEffect } from 'react';
 import { cambiarThema } from './core/helper';
 import { Theme } from '../Components/Theme';
 
@@ -8,9 +6,13 @@ import { Index } from '../Pages/Index';
 import { Test } from '../Pages/Test';
 import { Route, Routes, Navigate } from 'react-router-dom';
 
+import { store } from './store';
+import { Provider } from "react-redux";
+import { useStates } from './useStates';
+
 
 const BgTheme = () => {
-    const { ls } = useContext(AllContext);
+    const { ls } = useStates();
     return (
         <>
             <div className={`wipeInDown full-page-container bg-my-${ls.theme}`}></div>
@@ -20,7 +22,7 @@ const BgTheme = () => {
 }
 
 function AppUI() {
-    const { ls } = useContext(AllContext);
+    const { ls } = useStates();
 
     useEffect(() => {
         cambiarThema(ls?.theme);
@@ -58,9 +60,9 @@ function AppUI() {
 
 function App(props) {
     return (
-        <MyContext>
+        <Provider store={store}>
             <AppUI />
-        </MyContext>
+        </Provider>
     );
 }
 
