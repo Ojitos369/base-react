@@ -1,14 +1,15 @@
 import { useEffect } from 'react';
+
+import { store } from './store';
+import { Provider } from "react-redux";
+import { useStates } from './useStates';
+
 import { cambiarThema } from './core/helper';
 import { Theme } from '../Components/Theme';
 
 import { Index } from '../Pages/Index';
 import { Test } from '../Pages/Test';
 import { Route, Routes, Navigate } from 'react-router-dom';
-
-import { store } from './store';
-import { Provider } from "react-redux";
-import { useStates } from './useStates';
 
 
 const BgTheme = () => {

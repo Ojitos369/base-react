@@ -200,6 +200,10 @@ const selectNull = props => {
     props.actualizador(data);
 }
 
+const cloneO = obj => {
+    return JSON.parse(JSON.stringify(obj))
+}
+
 
 export {
     cambiarThema,
@@ -212,4 +216,5 @@ export {
     selectArrowDown,
     selectEnter,
     selectNull,
+    cloneO,
 };

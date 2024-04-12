@@ -1,13 +1,17 @@
 import axios from "axios";
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
+
 import { useDispatch, useSelector } from "react-redux";
 import { f as ff } from "./fs";
 
 const MySwal = withReactContent(Swal);
 
-let link = '';
-link = 'http://localhost:8369/'
+const base_link = 'http://localhost:8369/api/'
+axios.defaults.withCredentials = true
+const miAxios = axios.create({
+    baseURL: base_link,
+});
 
 
 const useF = props => {
