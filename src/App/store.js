@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { fsReducer } from "./useStates/fs";
+import { fsReducer } from "../Hooks/useStates/fs";
 
 // console.log('fsReducer', fsReducer);
 

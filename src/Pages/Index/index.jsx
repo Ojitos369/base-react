@@ -1,5 +1,5 @@
 import { useEffect, useMemo } from 'react';
-import { useStates } from '../../App/useStates';
+import { useStates } from '../../Hooks/useStates';
 import { ModalThemeChanged } from '../../Components/Modals/ModalThemeChanged';
 
 import './styles/index.module.css';

@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 
 import { store } from './store';
 import { Provider } from "react-redux";
-import { useStates } from './useStates';
+import { useStates } from '../Hooks/useStates';
 
-import { cambiarThema } from './core/helper';
+import { cambiarThema } from '../Core/helper';
 import { Theme } from '../Components/Theme';
 
 import { Index } from '../Pages/Index';

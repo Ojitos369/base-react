@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
-import { useStates } from '../../App/useStates';
-import { useKeyDown, useKeyUp } from '../../App/myHooks';
+import { useStates } from '../../Hooks/useStates';
+import { useKeyDown, useKeyUp } from '../../Hooks/myHooks';
 import styles from '/src/Components/Modals/styles/index.module.scss';
 
 

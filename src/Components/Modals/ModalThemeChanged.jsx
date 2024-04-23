@@ -1,4 +1,4 @@
-import { useStates } from '../../App/useStates';
+import { useStates } from '../../Hooks/useStates';
 import { GeneralModal } from './GeneralModal';
 
 const ModalThemeChanged = props => {

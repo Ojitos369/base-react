@@ -1,32 +1,32 @@
-.sun_icon {
-    .sun_primary{
+.sun {
+    .primary{
         fill: var(--my-secondary);
     }
-    .sun_secondary{
+    .secondary{
         fill: var(--my-yellow);
     }
 }
-.moon_icon {
-    .moon_primary{
+.moon {
+    .primary{
         fill: var(--my-secondary);
     }
-    .moon_secondary{
+    .secondary{
         fill: var(--my-yellow);
     }
 }
-.circle_xmark_icon {
-    .circle_xmark_primary{
+.circle_xmark {
+    .primary{
         fill: #800;
     }
-    .circle_xmark_secondary{
+    .secondary{
         fill: #000;
     }
 }
-.gears_icon {
-    .gears_primary{
+.gears {
+    .primary{
         fill: #05f2be;
     }
-    .gears_secondary{
+    .secondary{
         fill: #9616ff;
     }
 }
