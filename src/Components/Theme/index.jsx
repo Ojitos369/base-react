@@ -1,6 +1,6 @@
 import { Fragment, useEffect } from 'react';
-import { useStates } from '../../App/useStates';
-import { Sun, Moon } from '../../App/Icons';
+import { useStates } from '../../Hooks/useStates';
+import { Sun, Moon } from '../Icons';
 import styles from './styles/index.module.scss';
 // console.log(styles);
 

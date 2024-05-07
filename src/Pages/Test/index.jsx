@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { useStates } from '../../App/useStates';
+import { useStates } from '../../Hooks/useStates';
 
 function Test() {
     const { s, f, ls, lf } = useStates();

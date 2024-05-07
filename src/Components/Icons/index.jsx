@@ -9,8 +9,8 @@ const GeneralSimple = props => {
     const icon = props.icon || '';
     const primary = props.primary || props.class1 || '';
     const fillPrimary = props.fillPrimary || props.fill1 || '';
-    const className = props.className || `icon ${icon || simple[`${name}_icon`]}` || '';
-    const classPrimary = props.classPrimary || primary || (!fillPrimary && simple[`${name}_primary`]) || '';
+    const className = props.className || `icon ${icon || simple[`${name}`]}` || '';
+    const classPrimary = props.classPrimary || primary || (!fillPrimary && simple[`primary`]) || '';
     const style = props.style || {};
     const stylePrimary = props.stylePrimary || props.style1 || {};
 
@@ -37,9 +37,9 @@ const GeneralDoble = props => {
     const secondary = props.secondary || props.class2 || '';
     const fillPrimary = props.fillPrimary || props.fill1 || '';
     const fillSecondary = props.fillSecondary || props.fill2 || '';
-    const className = props.className || `icon ${icon || dobles[`${name}_icon`]}` || '';
-    const classPrimary = props.classPrimary || primary || (!fillPrimary && dobles[`${name}_primary`]) || '';
-    const classSecondary = props.classSecondary || secondary || (!fillSecondary && dobles[`${name}_secondary`]) || '';
+    const className = props.className || `icon ${icon || dobles[`${name}`]}` || '';
+    const classPrimary = props.classPrimary || primary || (!fillPrimary && dobles[`primary`]) || '';
+    const classSecondary = props.classSecondary || secondary || (!fillSecondary && dobles[`secondary`]) || '';
     const style = props.style || {};
     const stylePrimary = props.stylePrimary || props.style1 || {};
     const styleSecondary = props.styleSecondary || props.style2 || {};

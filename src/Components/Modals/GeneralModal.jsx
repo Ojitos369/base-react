@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
-import { useStates } from '../../App/useStates';
-import { useKeyDown, useKeyUp, useLocalTab } from '../../App/myHooks';
+import { useStates } from '../../Hooks/useStates';
+import { useKeyDown, useKeyUp, useLocalTab } from '../../Hooks';
 import styles from './styles/index.module.scss';
 
 

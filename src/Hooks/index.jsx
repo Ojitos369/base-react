@@ -1,5 +1,5 @@
 import { useEffect, useMemo } from 'react';
-import { useStates } from '../useStates';
+import { useStates } from './useStates';
 
 
 const useKeyDown = (callback, keys, keyExec, extras) => {
