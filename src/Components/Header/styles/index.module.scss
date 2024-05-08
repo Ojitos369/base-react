@@ -1,0 +1,99 @@
+@import "../../../static/css/response.scss";
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px 80px;
+
+    // box shadow
+    box-shadow: 0px 0px 10px 0px var(--my-minor);
+    h1 {
+        color: var(--my-minor);
+    }
+    input {
+        box-shadow: 0px 1px 15px -2px var(--my-minor);
+        &:focus {
+            box-shadow: 0px 7px 8px -5px var(--my-minor);
+            outline: none;
+        }
+    }
+}
+.search_container {
+    display: none;
+    .filter_icon {
+        svg {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            margin-left: 15px;
+            cursor: pointer;
+        }
+    }
+    @include md {
+        display: block;
+    }
+}
+.menuModal {
+    margin-top: 10px;
+    .search_container {
+        display: block;
+        @include md {
+            display: none;
+        }
+    }
+}
+.closeAction {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    svg {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+.login, .filtros {
+    .input_element {
+        margin-top: 3px;
+        display: flex;
+        flex-direction: column;
+
+        .input_label {
+            padding: 2px 4px;
+        }
+        .input {
+            padding: 5px 15px;
+            margin-top: 5px;
+            border: 1px solid var(--my-minor);
+            border-radius: 5px;
+            color: #000;
+            &:focus {
+                border: 1px solid var(--my-major);
+                outline: none;
+            }
+        }
+    }
+    .submit_element {
+        margin-top: 25px;
+        width: 100%;
+        .input_button {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            height: 45px;
+            border-radius: 8px;
+            box-shadow: 0 0 0 0;
+            text-align: center;
+        }
+    }
+    .error_message {
+        color: red;
+        font-weight: bolder;
+    }
+}
+

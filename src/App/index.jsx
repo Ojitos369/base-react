@@ -7,6 +7,7 @@ import { useStates } from '../Hooks/useStates';
 import { cambiarThema } from '../Core/helper';
 import { Theme } from '../Components/Theme';
 
+import { Main } from '../Pages/Main';
 import { Index } from '../Pages/Index';
 import { Test } from '../Pages/Test';
 import { Route, Routes, Navigate } from 'react-router-dom';
@@ -33,27 +34,18 @@ function AppUI() {
         <div className={`text-[var(--my-minor)]`}>
             <BgTheme />
             <Routes>
+                <Route path="" element={ <Main /> } >
                 {/* -----------   Index   ----------- */}
-                <Route
-                    path="/"
-                    element={
-                        <Index />
-                    }
-                />
+                    <Route path="" element={ <Index /> } />
                 {/* -----------   /Index   ----------- */}
+                </Route>
                 {/* -----------   Test   ----------- */}
-                <Route
-                    path="test"
-                    element={
-                        <Test />
-                    }
-                />
+                <Route path="test" element={ <Test /> } />
                 {/* -----------   /Test   ----------- */}
 
                 {/* -----------   404   ----------- */}
                 <Route path="*/" element={<div className='text-danger h1 text-center mt-5'>404 Not Found</div>} />
                 {/* -----------   /404   ----------- */}
-
             </Routes>
         </div>
     );
