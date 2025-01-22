@@ -171,3 +171,9 @@ body::-webkit-scrollbar {
     background: var(--my-white);
     color: var(--my-dark);
 }
+
+input, textarea, select {
+    background-color: white;
+    color: black;
+}
+

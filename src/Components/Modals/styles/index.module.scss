@@ -18,9 +18,9 @@
     }
     .modal_container {
         margin-top: 10vh;
-        height: 15vh;
+        min-height: 15vh;
         max-height: 85vh;
-        border-radius: 15px;
+        border-radius: 7px;
         animation: fadeIn .4s;
         width: 80%;
         overflow: hidden;
@@ -28,6 +28,84 @@
         position: relative;
         background: var(--my-major);
         color: var(--my-minor);
+
+    }
+    /* 50, 60, 70, 80, 90 */
+    .modal_container_50 {
+        width: 50%;
+    }
+    .modal_container_60 {
+        width: 60%;
+    }
+    .modal_container_70 {
+        width: 70%;
+    }
+    .modal_container_80 {
+        width: 80%;
+    }
+    .modal_container_90 {
+        width: 90%;
+    }
+}
+
+.modal_info_movil {
+    // background-color: #0008;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 2000;
+    overflow-y: scroll;
+    display: flex;
+    align-items: start;
+
+    .my_modal {
+        border: 1px var(--my-minor) solid;
+    }
+    .modal_container {
+        pointer-events: auto;
+        position: absolute;
+        top: 10vh;
+        min-height: 15vh;
+        max-height: 85vh;
+        border-radius: 7px;
+        animation: fadeIn .4s;
+        width: 80%;
+        overflow: hidden;
+        overflow-y: scroll;
+        position: relative;
+        background: var(--my-major);
+        color: var(--my-minor);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        flex-wrap: wrap;
+        align-items: start;
+
+        .modal_close_head {
+            display: flex;
+            width: 100%;
+            justify-content: end;
+            padding: 0 5px;
+            .modal_close {
+                cursor: pointer;
+                color: #000;
+                background: red;
+                border: 1px #000 solid;
+                border-radius: 30%;
+                transition: color .3s;
+                transition: background .3s;
+                padding: 5px 15px;
+                &:hover {
+                    color: red;
+                    background: #000;
+                    border: 1px red solid;
+                }
+            }
+        }
     }
     /* 50, 60, 70, 80, 90 */
     .modal_container_50 {

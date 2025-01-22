@@ -1,4 +1,4 @@
-import { AllContext } from '../../Hooks/MyContext';
+import React from 'react';
 
 function Separador(props) {
     /*

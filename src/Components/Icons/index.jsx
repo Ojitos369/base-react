@@ -109,103 +109,6 @@ const AnimateRemove = props => {
 }
 
 
-// -----------------------------------   SPECIALS   ----------------------------------- //
-const Google = props => {
-    return (
-        <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            xlink="http://www.w3.org/1999/xlink"
-            className={`icon ${styles.google_icon}`}
-            viewBox="-380.2 274.7 65.7 65.8">
-            <circle 
-                className={`st0 ${styles.google_st0}`}
-                cx="-347.3" 
-                cy="307.6" 
-                r="32.9"/>
-            <circle 
-                className={`st1 ${styles.google_st1}`}
-                cx="-347.3" 
-                cy="307.1" 
-                r="32.4"/>
-            <g>
-                <defs>
-                    <path 
-                        id="google_SVGID_1_"
-                        className={`google_SVGID_1_ ${styles.google_SVGID_1_}`}
-                        d="M-326.3 303.3h-20.5v8.5h11.8c-1.1 5.4-5.7 8.5-11.8 8.5-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4c-3.9-3.4-8.9-5.5-14.5-5.5-12.2 0-22 9.8-22 22s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z"/>
-                </defs>
-                <clipPath 
-                    id="google_SVGID_2_"
-                    className={`google_SVGID_2_ ${styles.google_SVGID_2_}`}
-                    >
-                    <use 
-                        href="#google_SVGID_1_" 
-                        overflow="visible"/>
-                </clipPath>
-                <path 
-                    className={`st2 ${styles.google_st2}`}
-                    d="M-370.8 320.3v-26l17 13z"/>
-                <defs>
-                    <path 
-                        id="google_SVGID_3_" 
-                        className={`google_SVGID_3_ ${styles.google_SVGID_3_}`}
-                        d="M-326.3 303.3h-20.5v8.5h11.8c-1.1 5.4-5.7 8.5-11.8 8.5-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4c-3.9-3.4-8.9-5.5-14.5-5.5-12.2 0-22 9.8-22 22s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z"/>
-                </defs>
-                <clipPath 
-                    id="google_SVGID_4_"
-                    className={`google_SVGID_4_ ${styles.google_SVGID_4_}`}
-                    >
-                    <use 
-                        href="#google_SVGID_3_" 
-                        overflow="visible"/>
-                </clipPath>
-                <path 
-                    className={`st3 ${styles.google_st3}`}
-                    d="M-370.8 294.3l17 13 7-6.1 24-3.9v-14h-48z"/>
-                <g>
-                    <defs>
-                        <path 
-                            id="google_SVGID_5_" 
-                            className={`google_SVGID_5_ ${styles.google_SVGID_5_}`}
-                            d="M-326.3 303.3h-20.5v8.5h11.8c-1.1 5.4-5.7 8.5-11.8 8.5-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4c-3.9-3.4-8.9-5.5-14.5-5.5-12.2 0-22 9.8-22 22s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z"/>
-                    </defs>
-                    <clipPath 
-                        id="google_SVGID_6_"
-                        className={`google_SVGID_6_ ${styles.google_SVGID_6_}`}
-                        >
-                        <use href="#google_SVGID_5_" overflow="visible"/>
-                    </clipPath>
-                    <path 
-                        className={`st4 ${styles.google_st4}`}
-                        d="M-370.8 320.3l30-23 7.9 1 10.1-15v48h-48z"/>
-                </g>
-                <g>
-                    <defs>
-                        <path 
-                            id="google_SVGID_7_" 
-                            className={`google_SVGID_7_ ${styles.google_SVGID_7_}`}
-                            d="M-326.3 303.3h-20.5v8.5h11.8c-1.1 5.4-5.7 8.5-11.8 8.5-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4c-3.9-3.4-8.9-5.5-14.5-5.5-12.2 0-22 9.8-22 22s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z"/>
-                    </defs>
-                    <clipPath 
-                        id="google_SVGID_8_"
-                        className={`google_SVGID_8_ ${styles.google_SVGID_8_}`}
-                        >
-                        <use 
-                            href="#google_SVGID_7_" 
-                            className={`google_SVGID_7_ ${styles.google_SVGID_7_}`}
-                            overflow="visible"/>
-                    </clipPath>
-                    <path 
-                        className={`st5 ${styles.google_st5}`}
-                        d="M-322.8 331.3l-31-24-4-3 35-10z"/>
-                </g>
-            </g>
-        </svg>
-    )
-}
-
-
-
 // -----------------------------------   SIMPLE   ----------------------------------- //
 const Play = props => {
     const name = 'play';
@@ -258,19 +161,6 @@ const Moon = props => {
             />
     )
 }
-const ChevronsLeft = props => {
-    const name = 'chevrons_left';
-    const d1="M233.4 278.6c-12.5-12.5-12.5-32.8 0-45.3l192-192c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3L301.3 256 470.6 425.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0l-192-192z";
-    const d2="M41.4 278.6c-12.5-12.5-12.5-32.8 0-45.3l192-192c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3L109.3 256 278.6 425.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0l-192-192z";
-    return (
-        <GeneralDoble
-            name={name}
-            d1={d1}
-            d2={d2}
-            {...props}
-            />
-    )
-}
 
 export { 
     AnimateEdit,
@@ -279,6 +169,4 @@ export {
     Pause,
     Sun,
     Moon,
-    Google,
-    ChevronsLeft,
-};
+ };

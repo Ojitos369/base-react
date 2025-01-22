@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-import { Link, useParams, useNavigate } from 'react-router-dom';
 import { useF } from "./functions";
 import { useLf } from "./localFunctions";
 
@@ -9,7 +8,7 @@ const useStates = props => {
     const f = useF();
     const lf = useLf();
 
-    return { ls, s, f, lf, Link, useParams, useNavigate };
+    return { ls, s, f, lf };
 }
 
 export { useStates };

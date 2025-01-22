@@ -1,16 +1,16 @@
 import axios from "axios";
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
-
 import { useDispatch, useSelector } from "react-redux";
 import { f as ff } from "./fs";
 
+
 const MySwal = withReactContent(Swal);
 
-const base_link = 'http://localhost:8369/api/'
+const link = 'http://localhost:8369/api/';
 axios.defaults.withCredentials = true
 const miAxios = axios.create({
-    baseURL: base_link,
+    baseURL: link,
 });
 
 
@@ -18,6 +18,26 @@ const useF = props => {
     const ls = useSelector(state => state.fs.ls);
     const s = useSelector(state => state.fs.s);
     const d = useDispatch();
+
+    const app = {
+        helloWorld: () => {
+            const end = 'app/hello_world/';
+            miAxios.get(end)
+            .then(res => {
+                console.log(res.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+        }
+    }
+
+    const general = {
+        notificacion: props => {
+            u1("general", "notification", props);
+            u2("modals", "general", "notification", true);
+        }
+    }
 
     // u[0-9]
     const u0 = (f0, value) => {
@@ -51,7 +71,10 @@ const useF = props => {
         d(ff.u9({f0, f1, f2, f3, f4, f5, f6, f7, f8, f9, value}));
     }
 
-    return { u0, u1, u2, u3, u4, u5, u6, u7, u8, u9 };
+    return { 
+        u0, u1, u2, u3, u4, u5, u6, u7, u8, u9, 
+        app, general, 
+    };
 }
 
 export { useF };

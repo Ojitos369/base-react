@@ -1,12 +1,11 @@
-import { Fragment, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useStates } from '../../Hooks/useStates';
 import { Sun, Moon } from '../Icons';
 import styles from './styles/index.module.scss';
 // console.log(styles);
 
 function Theme() {
-    const { ls, lf } = useStates();
-
+    const { ls, lf, s, f } = useStates();
     return (
         <button
             className={`${styles.toggle_theme_button}`}
