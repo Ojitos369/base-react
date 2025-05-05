@@ -30,7 +30,7 @@ const Index = props => {
     }, [theme, showModal]);
 
     return (
-        <div className={`${styles.indexPage} flex w-full flex-wrap justify-center`}>
+        <div className={` ${styles.indexPage} flex flex-row w-full flex-wrap justify-center`}>
             <h2 className={`text-center w-1/3 mt-3 font-bold text-3xl ${theme === 'black' ? 'text-white' : 'text-black'} reflejo`}
             >
                 Actual theme: {theme}
